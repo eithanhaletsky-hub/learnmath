@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathClass - לימוד מתמטיקה לכיתה י׳</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            startup: { pageReady: () => MathJax.startup.defaultPageReady() }
+        };
+    </script>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-content">
+            <div class="logo">MathClass</div>
+            <div class="nav-links">
+                <a href="#" onclick="showHome()" class="nav-link active">ראשי</a>
+                <a href="#" onclick="showProgress()" class="nav-link">התקדמות</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="home-view">
+        <header class="hero">
+            <h1>מתמטיקה לכיתה י׳</h1>
+            <p>60 שיעורים, תרגילים ושאלות אמריקאיות - הכנה מושלמת לשנת הלימודים</p>
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-num" id="total-lessons">60</span>
+                    <span class="stat-label">שיעורים</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" id="total-questions">300</span>
+                    <span class="stat-label">שאלות</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" id="completed-count">0</span>
+                    <span class="stat-label">הושלמו</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="categories-container" id="categories-container">
+        </main>
+    </div>
+
+    <div id="lesson-view" class="hidden">
+        <div class="lesson-header">
+            <button class="back-btn" onclick="goBack()">→ חזרה</button>
+            <h2 id="lesson-title"></h2>
+            <span class="lesson-badge" id="lesson-badge"></span>
+        </div>
+        <div class="lesson-content">
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('theory')">תאוריה</button>
+                <button class="tab" onclick="switchTab('quiz')">תרגול</button>
+            </div>
+
+            <div id="theory-tab" class="tab-content active">
+                <div id="lesson-theory"></div>
+            </div>
+
+            <div id="quiz-tab" class="tab-content">
+                <div id="quiz-container"></div>
+                <div id="quiz-results" class="hidden">
+                    <div class="results-card">
+                        <h3>תוצאות</h3>
+                        <div class="score-circle">
+                            <span id="score-text"></span>
+                        </div>
+                        <p id="score-message"></p>
+                        <button class="btn" onclick="retryQuiz()">נסה שוב</button>
+                    </div>
+                </div>
+                <button class="btn submit-btn" id="submit-quiz" onclick="submitQuiz()">בדוק תשובות</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="progress-view" class="hidden">
+        <div class="progress-header">
+            <button class="back-btn" onclick="showHome()">→ חזרה</button>
+            <h2>ההתקדמות שלי</h2>
+        </div>
+        <div class="progress-content">
+            <div class="progress-overview">
+                <div class="progress-ring-container">
+                    <svg class="progress-ring" viewBox="0 0 120 120">
+                        <circle class="progress-ring-bg" cx="60" cy="60" r="52"/>
+                        <circle class="progress-ring-fill" id="progress-ring-fill" cx="60" cy="60" r="52"/>
+                    </svg>
+                    <div class="progress-ring-text">
+                        <span id="progress-percent">0%</span>
+                    </div>
+                </div>
+                <div class="progress-stats">
+                    <p><strong id="p-completed">0</strong> שיעורים הושלמו</p>
+                    <p><strong id="p-avg">0%</strong> ציון ממוצע</p>
+                    <p><strong id="p-best">-</strong> הנושא הכי חזק</p>
+                </div>
+            </div>
+            <div class="progress-list" id="progress-list"></div>
+        </div>
+    </div>
+
+    <script src="js/lessons.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
