@@ -4953,5 +4953,1477 @@ $$\\sqrt{g(x)} \\text{ מוגדר כאשר } g(x) \\geq 0$$
                 explanation: '$f(x)=0$ כש-$x-5=0$ → $x=5$ (המונה מתאפס).'
             }
         ]
+    },
+
+    // ===== שיעורים 81-130 =====
+
+    {
+        id: 81,
+        category: 'algebra',
+        title: 'דיסקרימיננטה',
+        desc: 'ניתוח מספר הפתרונות למשוואה ריבועית',
+        theory: `
+<h3>מהי הדיסקרימיננטה?</h3>
+<p>עבור משוואה $ax^2+bx+c=0$, הדיסקרימיננטה היא:</p>
+<div class="formula-box">$$\\Delta = b^2 - 4ac$$</div>
+<p>היא מופיעה מתחת לשורש בנוסחת השורשים, ולכן קובעת כמה פתרונות יש:</p>
+<p>• $\\Delta > 0$ → <strong>שני פתרונות</strong> ממשיים שונים</p>
+<p>• $\\Delta = 0$ → <strong>פתרון יחיד</strong> (שורש כפול)</p>
+<p>• $\\Delta < 0$ → <strong>אין פתרונות</strong> ממשיים</p>
+
+<div class="tip-box"><strong>טיפ:</strong> הדיסקרימיננטה גם אומרת כמה נקודות חיתוך עם ציר $x$ יש לפרבולה $y=ax^2+bx+c$.</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$2x^2-4x+2=0$: $\\Delta = 16-16 = 0$ → פתרון יחיד: $x=1$.</p>
+<p>$x^2+x+1=0$: $\\Delta = 1-4 = -3 < 0$ → אין פתרונות.</p>
+</div>
+        `,
+        questions: [
+            {q:'הדיסקרימיננטה של $x^2-6x+9=0$:',options:['$0$','$36$','$-36$','$9$'],correct:0,explanation:'$\\Delta=36-36=0$. שורש כפול $x=3$.'},
+            {q:'ל-$x^2+2x+5=0$ יש:',options:['אין פתרונות','פתרון אחד','שני פתרונות','אינסוף'],correct:0,explanation:'$\\Delta=4-20=-16<0$.'},
+            {q:'אם $\\Delta>0$ למשוואה ריבועית, אז:',options:['יש 2 פתרונות','יש פתרון אחד','אין פתרונות','יש 3 פתרונות'],correct:0,explanation:'דיסקרימיננטה חיובית = שני שורשים שונים.'},
+            {q:'$\\Delta$ של $3x^2-x-2=0$:',options:['$25$','$-23$','$1$','$7$'],correct:0,explanation:'$\\Delta=1+24=25$.'},
+            {q:'לאילו ערכי $k$ ל-$x^2+kx+4=0$ פתרון יחיד?',options:['$k=\\pm4$','$k=4$','$k=0$','$k=\\pm2$'],correct:0,explanation:'$\\Delta=k^2-16=0 \\Rightarrow k=\\pm4$.'}
+        ]
+    },
+    {
+        id: 82,
+        category: 'algebra',
+        title: 'יחסי ויאטה',
+        desc: 'קשר בין שורשים למקדמים',
+        theory: `
+<h3>משפט ויאטה</h3>
+<p>אם $x_1, x_2$ שורשי $ax^2+bx+c=0$:</p>
+<div class="formula-box">$$x_1+x_2 = -\\frac{b}{a} \\qquad x_1 \\cdot x_2 = \\frac{c}{a}$$</div>
+<p><strong>למה שימושי?</strong> ניתן לחשב סכום ומכפלת שורשים בלי למצוא אותם!</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$x^2-7x+12=0$: סכום $=7$, מכפלה $=12$. אכן $3+4=7, 3\\cdot4=12$.</p>
+</div>
+
+<div class="tip-box"><strong>שימוש הפוך:</strong> אם ידועים הסכום $s$ והמכפלה $p$, המשוואה היא $x^2-sx+p=0$.</div>
+        `,
+        questions: [
+            {q:'סכום שורשי $x^2-5x+6=0$:',options:['$5$','$6$','$-5$','$-6$'],correct:0,explanation:'$x_1+x_2=-\\frac{-5}{1}=5$.'},
+            {q:'מכפלת שורשי $2x^2+3x-4=0$:',options:['$-2$','$2$','$-\\frac{3}{2}$','$4$'],correct:0,explanation:'$x_1 \\cdot x_2=\\frac{-4}{2}=-2$.'},
+            {q:'משוואה ששורשיה 2 ו-5:',options:['$x^2-7x+10=0$','$x^2+7x+10=0$','$x^2-7x-10=0$','$x^2-10x+7=0$'],correct:0,explanation:'סכום $=7$, מכפלה $=10$: $x^2-7x+10=0$.'},
+            {q:'אם $x_1+x_2=4$ ו-$x_1 \\cdot x_2=-3$, אז $x_1^2+x_2^2=$:',options:['$22$','$16$','$10$','$19$'],correct:0,explanation:'$x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=16+6=22$.'},
+            {q:'סכום שורשי $x^2+8x+15=0$:',options:['$-8$','$8$','$15$','$-15$'],correct:0,explanation:'$x_1+x_2=-\\frac{8}{1}=-8$.'}
+        ]
+    },
+    {
+        id: 83,
+        category: 'algebra',
+        title: 'משוואות עם פרמטר',
+        desc: 'ניתוח משוואות עם אות נוספת',
+        theory: `
+<h3>מהי משוואה עם פרמטר?</h3>
+<p>משוואה שמכילה אות נוספת (בד"כ $k$, $m$, $a$) מלבד הנעלם. צריך למצוא לאילו ערכי הפרמטר יש/אין פתרונות.</p>
+
+<h3>שיטה</h3>
+<p>1. כתבו את המשוואה בצורה סטנדרטית.</p>
+<p>2. חשבו $\\Delta$ כפונקציה של הפרמטר.</p>
+<p>3. פתרו $\\Delta>0$, $\\Delta=0$, $\\Delta<0$ בהתאם לשאלה.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>לאילו ערכי $m$ ל-$x^2-2mx+m+2=0$ שני פתרונות?</p>
+<p>$\\Delta=4m^2-4(m+2)=4m^2-4m-8>0$</p>
+<p>$m^2-m-2>0 \\Rightarrow (m-2)(m+1)>0 \\Rightarrow m<-1$ או $m>2$</p>
+</div>
+        `,
+        questions: [
+            {q:'ל-$x^2+4x+k=0$ אין פתרונות כאשר:',options:['$k>4$','$k<4$','$k=4$','$k>0$'],correct:0,explanation:'$\\Delta=16-4k<0 \\Rightarrow k>4$.'},
+            {q:'ל-$x^2-kx+9=0$ פתרון יחיד כאשר $k>0$:',options:['$k=6$','$k=3$','$k=9$','$k=18$'],correct:0,explanation:'$\\Delta=k^2-36=0 \\Rightarrow k=6$ (חיובי).'},
+            {q:'ל-$kx^2+2x-1=0$ שני פתרונות כאשר:',options:['$k>-1$ ו-$k\\neq 0$','$k>0$','$k<-1$','כל $k$'],correct:0,explanation:'$\\Delta=4+4k>0 \\Rightarrow k>-1$, וגם $k\\neq 0$ כי צריך ריבועית.'},
+            {q:'ב-$x^2+2x+m=0$, שורש אחד הוא 3. מהו $m$?',options:['$-15$','$15$','$-9$','$9$'],correct:0,explanation:'$9+6+m=0 \\Rightarrow m=-15$.'},
+            {q:'אם $\\Delta=k^2-4k$, לאילו $k$ יש $\\Delta \\geq 0$?',options:['$k \\leq 0$ או $k \\geq 4$','$0 \\leq k \\leq 4$','$k \\geq 4$','$k>0$'],correct:0,explanation:'$k(k-4) \\geq 0 \\Rightarrow k \\leq 0$ או $k \\geq 4$.'}
+        ]
+    },
+    {
+        id: 84,
+        category: 'algebra',
+        title: 'חזקות עשרוניות וסדרי גודל',
+        desc: 'כתיב מדעי וחישובים',
+        theory: `
+<h3>כתיב מדעי</h3>
+<p>מספרים גדולים או קטנים מאוד נכתבים כ-$a \\times 10^n$ כאשר $1 \\leq |a| < 10$.</p>
+<div class="formula-box">$3{,}200{,}000 = 3.2 \\times 10^6 \\qquad 0.00045 = 4.5 \\times 10^{-4}$</div>
+
+<h3>כללי חישוב</h3>
+<p>• $(a \\times 10^m)(b \\times 10^n) = ab \\times 10^{m+n}$</p>
+<p>• $\\frac{a \\times 10^m}{b \\times 10^n} = \\frac{a}{b} \\times 10^{m-n}$</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$(3 \\times 10^4)(2 \\times 10^5) = 6 \\times 10^9$</p>
+</div>
+        `,
+        questions: [
+            {q:'$0.00032$ בכתיב מדעי:',options:['$3.2 \\times 10^{-4}$','$32 \\times 10^{-5}$','$3.2 \\times 10^{4}$','$0.32 \\times 10^{-3}$'],correct:0,explanation:'מזיזים נקודה 4 מקומות: $3.2 \\times 10^{-4}$.'},
+            {q:'$(4 \\times 10^3)(5 \\times 10^2)=$',options:['$2 \\times 10^6$','$20 \\times 10^5$','$9 \\times 10^5$','$4.5 \\times 10^6$'],correct:0,explanation:'$20 \\times 10^5 = 2 \\times 10^6$.'},
+            {q:'$\\frac{6 \\times 10^8}{3 \\times 10^5}=$',options:['$2 \\times 10^3$','$2 \\times 10^{13}$','$18 \\times 10^3$','$0.5 \\times 10^3$'],correct:0,explanation:'$\\frac{6}{3} \\times 10^{8-5} = 2 \\times 10^3$.'},
+            {q:'$5{,}600{,}000$ בכתיב מדעי:',options:['$5.6 \\times 10^6$','$56 \\times 10^5$','$5.6 \\times 10^7$','$0.56 \\times 10^7$'],correct:0,explanation:'$5.6 \\times 10^6$.'},
+            {q:'מה גדול יותר: $3 \\times 10^5$ או $8 \\times 10^4$?',options:['$3 \\times 10^5$','$8 \\times 10^4$','שווים','לא ניתן לדעת'],correct:0,explanation:'$3 \\times 10^5 = 300{,}000 > 80{,}000 = 8 \\times 10^4$.'}
+        ]
+    },
+    {
+        id: 85,
+        category: 'algebra',
+        title: 'אי-שוויונות ריבועיות — שיטת הסימנים',
+        desc: 'פתרון שיטתי עם טבלת סימנים',
+        theory: `
+<h3>שיטת הפתרון</h3>
+<p>1. העבירו הכל לצד אחד: $ax^2+bx+c > 0$ (או $<, \\geq, \\leq$)</p>
+<p>2. מצאו שורשים (אם קיימים)</p>
+<p>3. שרטטו ציר מספרים עם השורשים</p>
+<p>4. קבעו סימן בכל תחום</p>
+
+<div class="tip-box"><strong>כלל:</strong> אם $a>0$ (פרבולה "מחייכת"), הפונקציה שלילית <strong>בין</strong> השורשים. אם $a<0$ ("עצובה"), היא חיובית בין השורשים.</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$x^2-5x+6 < 0$</p>
+<p>שורשים: $x=2, x=3$. $a=1>0$ → שלילי בין השורשים.</p>
+<p><strong>פתרון:</strong> $2 < x < 3$</p>
+</div>
+        `,
+        questions: [
+            {q:'פתרון $x^2-4 > 0$:',options:['$x<-2$ או $x>2$','$-2<x<2$','$x>2$','$x>4$'],correct:0,explanation:'$(x-2)(x+2)>0$, $a>0$ → חיובי מחוץ לשורשים.'},
+            {q:'פתרון $x^2-6x+8 \\leq 0$:',options:['$2 \\leq x \\leq 4$','$x \\leq 2$ או $x \\geq 4$','$x \\leq 2$','$x<4$'],correct:0,explanation:'$(x-2)(x-4) \\leq 0$, $a>0$ → שלילי/אפס בין $2$ ל-$4$.'},
+            {q:'$-x^2+4x-3 > 0$ שקול ל:',options:['$1<x<3$','$x<1$ או $x>3$','$x>3$','$-3<x<-1$'],correct:0,explanation:'$a<0$, שורשים $1,3$ → חיובי בין השורשים: $1<x<3$.'},
+            {q:'ל-$x^2+x+1>0$:',options:['הפתרון: כל $x$','אין פתרון','$x>0$','$x>-1$'],correct:0,explanation:'$\\Delta=1-4=-3<0$, $a>0$ → תמיד חיובי.'},
+            {q:'$x^2 \\leq 9$ שקול ל:',options:['$-3 \\leq x \\leq 3$','$x \\leq 3$','$x \\geq -3$','$0 \\leq x \\leq 3$'],correct:0,explanation:'$x^2-9 \\leq 0$, $(x-3)(x+3) \\leq 0$ → $-3 \\leq x \\leq 3$.'}
+        ]
+    },
+    {
+        id: 86,
+        category: 'algebra',
+        title: 'שברים אלגבריים מורכבים',
+        desc: 'חיבור, חיסור, כפל וצמצום שברים',
+        theory: `
+<h3>צמצום</h3>
+<p>לפרק מונה ומכנה ולצמצם גורמים משותפים.</p>
+<div class="formula-box">$$\\frac{x^2-4}{x^2-4x+4} = \\frac{(x-2)(x+2)}{(x-2)^2} = \\frac{x+2}{x-2}$$</div>
+
+<h3>חיבור שברים</h3>
+<p>מוצאים מכנה משותף, ממירים, ומחברים:</p>
+<div class="formula-box">$$\\frac{a}{b} + \\frac{c}{d} = \\frac{ad+bc}{bd}$$</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$\\frac{1}{x-1}+\\frac{1}{x+1} = \\frac{(x+1)+(x-1)}{(x-1)(x+1)} = \\frac{2x}{x^2-1}$</p>
+</div>
+        `,
+        questions: [
+            {q:'צמצמו $\\frac{x^2-9}{x+3}$:',options:['$x-3$','$x+3$','$x^2-3$','$\\frac{x-3}{x+3}$'],correct:0,explanation:'$\\frac{(x-3)(x+3)}{x+3}=x-3$.'},
+            {q:'$\\frac{1}{x}+\\frac{1}{x+1}=$',options:['$\\frac{2x+1}{x(x+1)}$','$\\frac{2}{2x+1}$','$\\frac{1}{x^2+x}$','$\\frac{2x}{x+1}$'],correct:0,explanation:'$\\frac{x+1+x}{x(x+1)}=\\frac{2x+1}{x(x+1)}$.'},
+            {q:'$\\frac{x^2-1}{x-1}=$',options:['$x+1$','$x-1$','$1$','$x^2+1$'],correct:0,explanation:'$\\frac{(x-1)(x+1)}{x-1}=x+1$.'},
+            {q:'$\\frac{2}{x-3}-\\frac{1}{x+2}=$',options:['$\\frac{x+7}{(x-3)(x+2)}$','$\\frac{1}{x-1}$','$\\frac{x-7}{(x-3)(x+2)}$','$\\frac{3}{2x-1}$'],correct:0,explanation:'$\\frac{2(x+2)-(x-3)}{(x-3)(x+2)}=\\frac{x+7}{(x-3)(x+2)}$.'},
+            {q:'$\\frac{x}{x-2} \\cdot \\frac{x-2}{x^2}=$',options:['$\\frac{1}{x}$','$\\frac{1}{x-2}$','$x$','$\\frac{x-2}{x}$'],correct:0,explanation:'מצמצמים $(x-2)$ ו-$x$: $\\frac{1}{x}$.'}
+        ]
+    },
+    {
+        id: 87,
+        category: 'algebra',
+        title: 'חזקות רציונליות ושורשים',
+        desc: 'חישובים עם חזקות שבריות',
+        theory: `
+<h3>הקשר בין שורשים לחזקות</h3>
+<div class="formula-box">$$\\sqrt[n]{a} = a^{1/n} \\qquad \\sqrt[n]{a^m} = a^{m/n}$$</div>
+
+<h3>כללים</h3>
+<p>• $a^{m/n} \\cdot a^{p/q} = a^{m/n + p/q}$</p>
+<p>• $(a^{m/n})^k = a^{mk/n}$</p>
+<p>• $a^{-m/n} = \\frac{1}{a^{m/n}}$</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$8^{2/3} = (\\sqrt[3]{8})^2 = 2^2 = 4$</p>
+<p>$27^{-1/3} = \\frac{1}{\\sqrt[3]{27}} = \\frac{1}{3}$</p>
+</div>
+        `,
+        questions: [
+            {q:'$16^{3/4} =$',options:['$8$','$12$','$64$','$4$'],correct:0,explanation:'$(\\sqrt[4]{16})^3 = 2^3 = 8$.'},
+            {q:'$9^{1/2} =$',options:['$3$','$4.5$','$81$','$18$'],correct:0,explanation:'$9^{1/2} = \\sqrt{9} = 3$.'},
+            {q:'$8^{-2/3} =$',options:['$\\frac{1}{4}$','$4$','$-4$','$\\frac{1}{8}$'],correct:0,explanation:'$8^{-2/3} = \\frac{1}{8^{2/3}} = \\frac{1}{4}$.'},
+            {q:'$x^{1/2} \\cdot x^{3/2} =$',options:['$x^2$','$x^{3/4}$','$x$','$x^3$'],correct:0,explanation:'$x^{1/2+3/2} = x^{4/2} = x^2$.'},
+            {q:'$\\sqrt[3]{64} =$',options:['$4$','$8$','$3$','$16$'],correct:0,explanation:'$64^{1/3} = 4$ כי $4^3=64$.'}
+        ]
+    },
+    {
+        id: 88,
+        category: 'algebra',
+        title: 'משוואות מעריכיות',
+        desc: 'פתרון משוואות מהצורה $a^x=b$',
+        theory: `
+<h3>השיטה</h3>
+<p>אם $a^{f(x)} = a^{g(x)}$, אז $f(x) = g(x)$.</p>
+<p>אם $a^x = b$, אז $x = \\log_a b$.</p>
+
+<div class="formula-box">$$a^{f(x)} = a^{g(x)} \\Rightarrow f(x) = g(x)$$</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$2^{x+1} = 8 \\Rightarrow 2^{x+1} = 2^3 \\Rightarrow x+1=3 \\Rightarrow x=2$</p>
+<p>$3^{2x} = 81 \\Rightarrow 3^{2x} = 3^4 \\Rightarrow 2x=4 \\Rightarrow x=2$</p>
+</div>
+
+<div class="tip-box"><strong>טיפ:</strong> נסו להביא את שני הצדדים לאותו בסיס!</div>
+        `,
+        questions: [
+            {q:'$2^x = 32$:',options:['$x=5$','$x=4$','$x=6$','$x=16$'],correct:0,explanation:'$32=2^5 \\Rightarrow x=5$.'},
+            {q:'$5^{2x-1} = 125$:',options:['$x=2$','$x=3$','$x=1$','$x=4$'],correct:0,explanation:'$125=5^3 \\Rightarrow 2x-1=3 \\Rightarrow x=2$.'},
+            {q:'$4^x = 2^6$:',options:['$x=3$','$x=6$','$x=12$','$x=\\frac{3}{2}$'],correct:0,explanation:'$4^x=(2^2)^x=2^{2x}=2^6 \\Rightarrow 2x=6 \\Rightarrow x=3$.'},
+            {q:'$9^x = 27$:',options:['$x=\\frac{3}{2}$','$x=3$','$x=2$','$x=\\frac{2}{3}$'],correct:0,explanation:'$(3^2)^x = 3^3 \\Rightarrow 2x=3 \\Rightarrow x=\\frac{3}{2}$.'},
+            {q:'$10^x = 1000$:',options:['$x=3$','$x=10$','$x=100$','$x=30$'],correct:0,explanation:'$1000=10^3 \\Rightarrow x=3$.'}
+        ]
+    },
+    {
+        id: 89,
+        category: 'functions',
+        title: 'פונקציית ערך מוחלט',
+        desc: 'גרף ותכונות $|f(x)|$',
+        theory: `
+<h3>הגדרה</h3>
+<div class="formula-box">$$|x| = \\begin{cases} x & x \\geq 0 \\\\ -x & x < 0 \\end{cases}$$</div>
+<p>ערך מוחלט = מרחק מ-0 על ציר המספרים.</p>
+
+<h3>גרף $y=|x|$</h3>
+<p>צורת V — החלק השלילי "מתקפל" למעלה.</p>
+
+<h3>$y=|f(x)|$ מול $y=f(|x|)$</h3>
+<p>• $|f(x)|$: שיקוף החלק השלילי של $f$ מעל ציר $x$.</p>
+<p>• $f(|x|)$: שיקוף הגרף לימין ציר $y$ גם לשמאל (סימטריה ל-$y$).</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$y=|x-3|$: V עם קודקוד ב-$(3,0)$.</p>
+<p>$y=|x^2-4|$: הפרבולה "מתקפלת" למעלה איפה שהיא שלילית.</p>
+</div>
+        `,
+        questions: [
+            {q:'$|{-7}| =$',options:['$7$','$-7$','$0$','$49$'],correct:0,explanation:'ערך מוחלט של מספר שלילי = הערך החיובי.'},
+            {q:'הקודקוד של $y=|x-2|$:',options:['$(2,0)$','$(0,2)$','$(-2,0)$','$(0,-2)$'],correct:0,explanation:'$|x-2|=0$ כש-$x=2$. קודקוד ב-$(2,0)$.'},
+            {q:'$|x|=5$ → $x=$',options:['$5$ או $-5$','$5$','$-5$','$25$'],correct:0,explanation:'שני מספרים במרחק 5 מ-0: $\\pm 5$.'},
+            {q:'$|x-1|<3$ שקול ל:',options:['$-2<x<4$','$x<4$','$x>-2$','$|x|<4$'],correct:0,explanation:'$-3<x-1<3 \\Rightarrow -2<x<4$.'},
+            {q:'הגרף של $y=|x^2-1|$ נוגע בציר $x$ ב:',options:['$x=\\pm 1$','$x=0$','$x=1$','$x=\\pm 2$'],correct:0,explanation:'$|x^2-1|=0$ כש-$x^2=1$, $x=\\pm 1$.'}
+        ]
+    },
+    {
+        id: 90,
+        category: 'functions',
+        title: 'קצב שינוי ממוצע',
+        desc: 'שיפוע ממוצע בין שתי נקודות',
+        theory: `
+<h3>הגדרה</h3>
+<p>קצב השינוי הממוצע של $f$ בקטע $[a,b]$:</p>
+<div class="formula-box">$$\\frac{\\Delta y}{\\Delta x} = \\frac{f(b)-f(a)}{b-a}$$</div>
+<p>זהו <strong>השיפוע של הישר</strong> העובר דרך $(a, f(a))$ ו-$(b, f(b))$ — הנקרא "ישר המיתר".</p>
+
+<h3>משמעות</h3>
+<p>אם $f$ מתארת מיקום, קצב השינוי הממוצע = <strong>מהירות ממוצעת</strong>.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$f(x)=x^2$, קצב שינוי ב-$[1,3]$:</p>
+<p>$\\frac{f(3)-f(1)}{3-1} = \\frac{9-1}{2} = 4$</p>
+</div>
+        `,
+        questions: [
+            {q:'קצב שינוי של $f(x)=2x+3$ ב-$[0,5]$:',options:['$2$','$5$','$13$','$3$'],correct:0,explanation:'$\\frac{13-3}{5-0}=\\frac{10}{5}=2$. (בפונקציה לינארית, השיפוע קבוע.)'},
+            {q:'קצב שינוי של $f(x)=x^2$ ב-$[2,4]$:',options:['$6$','$8$','$4$','$12$'],correct:0,explanation:'$\\frac{16-4}{4-2}=\\frac{12}{2}=6$.'},
+            {q:'אם $f(1)=3$ ו-$f(5)=11$, קצב השינוי הממוצע:',options:['$2$','$8$','$4$','$14$'],correct:0,explanation:'$\\frac{11-3}{5-1}=\\frac{8}{4}=2$.'},
+            {q:'מה מייצג קצב שינוי ממוצע גיאומטרית?',options:['שיפוע ישר המיתר','שטח','אורך הקטע','קודקוד'],correct:0,explanation:'זהו שיפוע הישר המחבר שתי נקודות על הגרף.'},
+            {q:'קצב שינוי של $f(x)=x^3$ ב-$[0,2]$:',options:['$4$','$8$','$2$','$6$'],correct:0,explanation:'$\\frac{8-0}{2-0}=4$.'}
+        ]
+    },
+    {
+        id: 91,
+        category: 'functions',
+        title: 'פונקציה חד-חד-ערכית ועל',
+        desc: 'סוגי פונקציות מיוחדים',
+        theory: `
+<h3>פונקציה חד-חד-ערכית (חח"ע)</h3>
+<p>לכל $y$ בטווח יש <strong>לכל היותר $x$ אחד</strong>: $f(x_1)=f(x_2) \\Rightarrow x_1=x_2$.</p>
+<p><strong>מבחן גרפי:</strong> כל ישר אופקי חותך את הגרף <strong>לכל היותר פעם אחת</strong>.</p>
+
+<h3>פונקציה על (סורייקטיבית)</h3>
+<p>לכל $y$ בטווח המטרה יש <strong>לפחות $x$ אחד</strong>.</p>
+
+<h3>חח"ע ועל = הפיכה</h3>
+<p>פונקציה שהיא גם חח"ע וגם על — יש לה פונקציה הפוכה.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$f(x)=2x+1$: חח"ע ✓ (לינארית עם שיפוע $\\neq 0$)</p>
+<p>$f(x)=x^2$: <strong>לא</strong> חח"ע כי $f(2)=f(-2)=4$</p>
+<p>$f(x)=x^2$ ב-$[0,\\infty)$: כן חח"ע!</p>
+</div>
+        `,
+        questions: [
+            {q:'$f(x)=x^3$ היא חח"ע?',options:['כן','לא','רק ב-$x>0$','רק ב-$x<0$'],correct:0,explanation:'$x^3$ עולה ממש → חח"ע.'},
+            {q:'$f(x)=|x|$ היא חח"ע?',options:['לא','כן','רק ב-$x \\geq 0$','תלוי'],correct:0,explanation:'$f(2)=f(-2)=2$ → לא חח"ע.'},
+            {q:'מבחן גרפי לחח"ע:',options:['ישר אופקי חותך לכל היותר פעם','ישר אנכי חותך פעם','הגרף עולה','הגרף רציף'],correct:0,explanation:'כל ישר אופקי $y=c$ חותך את הגרף לכל היותר פעם.'},
+            {q:'פונקציה הפיכה חייבת להיות:',options:['חח"ע ועל','רק חח"ע','רק על','רציפה'],correct:0,explanation:'הפיכות = חח"ע + על.'},
+            {q:'$f(x)=2^x$ היא חח"ע?',options:['כן','לא','רק ב-$x>0$','תלוי בבסיס'],correct:0,explanation:'$2^x$ עולה ממש → חח"ע. (ולכן יש לה הופכית: $\\log_2 x$.)'}
+        ]
+    },
+    {
+        id: 92,
+        category: 'functions',
+        title: 'פונקציה מדרגות (חתיכתית)',
+        desc: 'הגדרה שונה בתחומים שונים',
+        theory: `
+<h3>הגדרה</h3>
+<p>פונקציה חתיכתית מוגדרת ע"י כללים שונים בתחומים שונים:</p>
+<div class="formula-box">$$f(x) = \\begin{cases} x^2 & x < 0 \\\\ 2x+1 & x \\geq 0 \\end{cases}$$</div>
+
+<h3>איך מחשבים?</h3>
+<p>1. בדקו לאיזה תחום שייך ה-$x$.</p>
+<p>2. השתמשו בכלל המתאים.</p>
+
+<h3>גרף</h3>
+<p>משרטטים כל חלק בתחומו. בנקודת המעבר — עיגול מלא ($\\leq$) או ריק ($<$).</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$f(-3) = (-3)^2 = 9$ (כי $-3 < 0$)</p>
+<p>$f(2) = 2(2)+1 = 5$ (כי $2 \\geq 0$)</p>
+<p>$f(0) = 2(0)+1 = 1$ (כי $0 \\geq 0$)</p>
+</div>
+        `,
+        questions: [
+            {q:'$f(x)=\\begin{cases} x+1 & x<2 \\\\ 3x & x \\geq 2 \\end{cases}$, $f(2)=$',options:['$6$','$3$','$5$','$4$'],correct:0,explanation:'$2 \\geq 2$ → $f(2)=3(2)=6$.'},
+            {q:'באותה פונקציה, $f(1)=$',options:['$2$','$3$','$1$','$4$'],correct:0,explanation:'$1<2$ → $f(1)=1+1=2$.'},
+            {q:'נקודת מעבר בפונקציה חתיכתית היא:',options:['הנקודה שבה הכלל משתנה','נקודת מקסימום','נקודת חיתוך','שורש'],correct:0,explanation:'שם הכלל עובר מחלק אחד לשני.'},
+            {q:'$f(x)=\\begin{cases} 1 & x>0 \\\\ 0 & x=0 \\\\ -1 & x<0 \\end{cases}$ נקראת:',options:['פונקציית סימן','פונקציה ריבועית','פונקציה לינארית','ערך מוחלט'],correct:0,explanation:'זו פונקציית הסימן $\\text{sgn}(x)$.'},
+            {q:'בגרף חתיכתי, עיגול ריק מסמן:',options:['הנקודה לא כלולה','הנקודה כלולה','מקסימום','מינימום'],correct:0,explanation:'עיגול ריק = הנקודה אינה שייכת לקטע (אי-שוויון חזק $<$).'}
+        ]
+    },
+    {
+        id: 93,
+        category: 'functions',
+        title: 'מבוא לגבול',
+        desc: 'מושג הגבול ומשמעותו',
+        theory: `
+<h3>מהו גבול?</h3>
+<p>$\\lim_{x \\to a} f(x) = L$ אומר: ככל ש-$x$ מתקרב ל-$a$, $f(x)$ מתקרב ל-$L$.</p>
+<p><strong>חשוב:</strong> לא משנה מה הערך של $f$ ב-$a$ עצמו!</p>
+
+<h3>חישוב גבולות</h3>
+<p>• הצבה ישירה (אם אפשר): $\\lim_{x \\to 2} (x^2+1) = 5$.</p>
+<p>• אם מקבלים $\\frac{0}{0}$: צמצמו ונסו שוב.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$\\lim_{x \\to 3} \\frac{x^2-9}{x-3} = \\lim_{x \\to 3} \\frac{(x-3)(x+3)}{x-3} = \\lim_{x \\to 3} (x+3) = 6$</p>
+</div>
+
+<div class="tip-box"><strong>טיפ:</strong> גבול $\\frac{0}{0}$ לא אומר שהתשובה 0 או שאין גבול — צריך לעבוד עוד!</div>
+        `,
+        questions: [
+            {q:'$\\lim_{x \\to 1} (3x+2) =$',options:['$5$','$3$','$2$','$1$'],correct:0,explanation:'הצבה ישירה: $3(1)+2=5$.'},
+            {q:'$\\lim_{x \\to 2} \\frac{x^2-4}{x-2} =$',options:['$4$','$0$','$2$','לא קיים'],correct:0,explanation:'$\\frac{(x-2)(x+2)}{x-2}=x+2 \\to 4$.'},
+            {q:'$\\lim_{x \\to 0} \\frac{x}{x} =$',options:['$1$','$0$','לא קיים','$\\infty$'],correct:0,explanation:'$\\frac{x}{x}=1$ לכל $x \\neq 0$, ולכן הגבול $=1$.'},
+            {q:'אם $\\lim_{x \\to a} f(x) = 3$, האם בהכרח $f(a)=3$?',options:['לא','כן','רק אם רציפה','תמיד'],correct:0,explanation:'הגבול תלוי בערכים <strong>סביב</strong> $a$, לא בערך ב-$a$ עצמו.'},
+            {q:'$\\lim_{x \\to 4} \\frac{\\sqrt{x}-2}{x-4} =$',options:['$\\frac{1}{4}$','$0$','$2$','$\\frac{1}{2}$'],correct:0,explanation:'$\\frac{\\sqrt{x}-2}{(\\sqrt{x}-2)(\\sqrt{x}+2)}=\\frac{1}{\\sqrt{x}+2} \\to \\frac{1}{4}$.'}
+        ]
+    },
+    {
+        id: 94,
+        category: 'functions',
+        title: 'העתקות וטרנספורמציות',
+        desc: 'שיקוף, מתיחה, כיווץ של גרפים',
+        theory: `
+<h3>טרנספורמציות על גרפים</h3>
+<p>מהגרף של $y=f(x)$ ניתן לבנות גרפים חדשים:</p>
+
+<p><strong>הזזה אנכית:</strong> $y=f(x)+k$ — למעלה ב-$k$</p>
+<p><strong>הזזה אופקית:</strong> $y=f(x-h)$ — ימינה ב-$h$</p>
+<p><strong>שיקוף ציר $x$:</strong> $y=-f(x)$</p>
+<p><strong>שיקוף ציר $y$:</strong> $y=f(-x)$</p>
+<p><strong>מתיחה אנכית:</strong> $y=a \\cdot f(x)$ ($|a|>1$ מותח, $|a|<1$ מכווץ)</p>
+
+<div class="tip-box"><strong>כלל:</strong> שינויים "בתוך" $f($ $)$ — אופקיים והפוכים. שינויים "מחוץ" — אנכיים וישירים.</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$y=x^2$ → $y=(x-3)^2+2$: הפרבולה זזה 3 ימינה, 2 למעלה. קודקוד $(3,2)$.</p>
+</div>
+        `,
+        questions: [
+            {q:'$y=f(x)+5$ ביחס ל-$y=f(x)$:',options:['הזזה 5 למעלה','הזזה 5 ימינה','מתיחה פי 5','שיקוף'],correct:0,explanation:'$+5$ מחוץ ל-$f$ → הזזה אנכית למעלה.'},
+            {q:'$y=f(x+3)$ ביחס ל-$y=f(x)$:',options:['הזזה 3 שמאלה','הזזה 3 ימינה','הזזה 3 למעלה','מתיחה'],correct:0,explanation:'$x+3$ = $x-(-3)$ → הזזה 3 שמאלה (הפוך לסימן).'},
+            {q:'$y=-f(x)$ זהו:',options:['שיקוף ציר $x$','שיקוף ציר $y$','הזזה','סיבוב'],correct:0,explanation:'$-f(x)$ הופך חיובי לשלילי ולהפך → שיקוף סביב ציר $x$.'},
+            {q:'קודקוד $y=(x+1)^2-4$:',options:['$(-1,-4)$','$(1,-4)$','$(-1,4)$','$(1,4)$'],correct:0,explanation:'$x+1=0$ → $x=-1$, ואז $y=-4$. קודקוד $(-1,-4)$.'},
+            {q:'$y=2f(x)$ ביחס ל-$y=f(x)$:',options:['מתיחה אנכית פי 2','הזזה 2 למעלה','מתיחה אופקית','הזזה 2 ימינה'],correct:0,explanation:'כפל מחוץ ל-$f$ = מתיחה אנכית.'}
+        ]
+    },
+    {
+        id: 95,
+        category: 'functions',
+        title: 'פונקציה לוגריתמית — מתקדם',
+        desc: 'חוקים, גרף ופתרון משוואות',
+        theory: `
+<h3>חוקי לוגריתמים — סיכום</h3>
+<div class="formula-box">
+$$\\log(ab) = \\log a + \\log b$$
+$$\\log\\frac{a}{b} = \\log a - \\log b$$
+$$\\log a^n = n\\log a$$
+$$\\log_a b = \\frac{\\log b}{\\log a} \\quad \\text{(המרת בסיס)}$$
+</div>
+
+<h3>גרף $y = \\log_a x$</h3>
+<p>• תחום: $x > 0$</p>
+<p>• עובר דרך $(1, 0)$ תמיד</p>
+<p>• אם $a > 1$: עולה. אם $0 < a < 1$: יורדת</p>
+<p>• אסימפטוטה אנכית: $x = 0$</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$\\log_2 8 + \\log_2 4 = \\log_2(8 \\cdot 4) = \\log_2 32 = 5$</p>
+<p>$\\log 1000 - \\log 10 = \\log \\frac{1000}{10} = \\log 100 = 2$</p>
+</div>
+        `,
+        questions: [
+            {q:'$\\log_3 81 =$',options:['$4$','$3$','$27$','$9$'],correct:0,explanation:'$3^4=81 \\Rightarrow \\log_3 81=4$.'},
+            {q:'$\\log 2 + \\log 50 =$',options:['$2$','$\\log 52$','$\\log 100$','$\\log 25$'],correct:0,explanation:'$\\log 2 + \\log 50 = \\log(2 \\cdot 50) = \\log 100 = 2$.'},
+            {q:'$\\log_2 x = 5 \\Rightarrow x =$',options:['$32$','$10$','$25$','$64$'],correct:0,explanation:'$x = 2^5 = 32$.'},
+            {q:'$\\log a^3 =$',options:['$3\\log a$','$\\log 3a$','$(\\log a)^3$','$\\log a + 3$'],correct:0,explanation:'חוק: $\\log a^n = n \\log a$.'},
+            {q:'הגרף של $y=\\log_2 x$ עובר דרך:',options:['$(1,0)$','$(0,1)$','$(2,0)$','$(0,0)$'],correct:0,explanation:'$\\log_2 1 = 0$, לכן $(1,0)$.'}
+        ]
+    },
+    {
+        id: 96,
+        category: 'geometry',
+        title: 'מרחק בין נקודות',
+        desc: 'נוסחת מרחק ונקודת אמצע',
+        theory: `
+<h3>נוסחת מרחק</h3>
+<div class="formula-box">$$d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$$</div>
+<p>זוהי פשוט פיתגורס — המרחק הוא היתר של משולש ישר-זווית.</p>
+
+<h3>נקודת אמצע</h3>
+<div class="formula-box">$$M = \\left(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2}\\right)$$</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$A(1,2), B(4,6)$:</p>
+<p>$d = \\sqrt{9+16} = 5$</p>
+<p>$M = (2.5, 4)$</p>
+</div>
+        `,
+        questions: [
+            {q:'מרחק בין $(0,0)$ ל-$(3,4)$:',options:['$5$','$7$','$\\sqrt{7}$','$25$'],correct:0,explanation:'$\\sqrt{9+16}=5$.'},
+            {q:'אמצע הקטע $(2,6)$ ו-$(8,10)$:',options:['$(5,8)$','$(10,16)$','$(3,2)$','$(6,4)$'],correct:0,explanation:'$(\\frac{10}{2},\\frac{16}{2})=(5,8)$.'},
+            {q:'מרחק בין $(1,1)$ ל-$(1,5)$:',options:['$4$','$6$','$5$','$2$'],correct:0,explanation:'$\\sqrt{0+16}=4$. (אותו $x$ → מרחק אנכי פשוט.)'},
+            {q:'אם $M(3,5)$ אמצע $A(1,2)$ ו-$B$, אז $B=$:',options:['$(5,8)$','$(2,3.5)$','$(4,7)$','$(2,7)$'],correct:0,explanation:'$\\frac{1+x}{2}=3 \\Rightarrow x=5$, $\\frac{2+y}{2}=5 \\Rightarrow y=8$.'},
+            {q:'מרחק $(−2,3)$ ל-$(4,−1)$:',options:['$\\sqrt{52}$','$\\sqrt{20}$','$8$','$10$'],correct:0,explanation:'$\\sqrt{36+16}=\\sqrt{52}=2\\sqrt{13}$.'}
+        ]
+    },
+    {
+        id: 97,
+        category: 'geometry',
+        title: 'משוואת ישר',
+        desc: 'צורות שונות של משוואת ישר',
+        theory: `
+<h3>צורת שיפוע-חיתוך</h3>
+<div class="formula-box">$$y = mx + b$$</div>
+<p>$m$ = שיפוע, $b$ = חיתוך עם ציר $y$.</p>
+
+<h3>שיפוע דרך 2 נקודות</h3>
+<div class="formula-box">$$m = \\frac{y_2-y_1}{x_2-x_1}$$</div>
+
+<h3>ישרים מקבילים ומאונכים</h3>
+<p>• מקבילים: $m_1 = m_2$</p>
+<p>• מאונכים: $m_1 \\cdot m_2 = -1$</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>ישר דרך $(1,3)$ ו-$(4,9)$: $m=\\frac{9-3}{4-1}=2$.</p>
+<p>$y=2x+b$, הצבת $(1,3)$: $3=2+b \\Rightarrow b=1$. ישר: $y=2x+1$.</p>
+</div>
+        `,
+        questions: [
+            {q:'שיפוע הישר $y=3x-7$:',options:['$3$','$-7$','$7$','$-3$'],correct:0,explanation:'$m=3$ (המקדם של $x$).'},
+            {q:'שיפוע דרך $(2,1)$ ו-$(6,9)$:',options:['$2$','$\\frac{1}{2}$','$4$','$8$'],correct:0,explanation:'$m=\\frac{9-1}{6-2}=\\frac{8}{4}=2$.'},
+            {q:'ישר מאונך ל-$y=2x+1$ שיפועו:',options:['$-\\frac{1}{2}$','$2$','$\\frac{1}{2}$','$-2$'],correct:0,explanation:'$m_1 \\cdot m_2=-1 \\Rightarrow m_2=-\\frac{1}{2}$.'},
+            {q:'חיתוך ציר $y$ של $y=-x+5$:',options:['$(0,5)$','$(5,0)$','$(0,-1)$','$(0,-5)$'],correct:0,explanation:'$b=5$, חיתוך ב-$(0,5)$.'},
+            {q:'ישר מקביל ל-$y=4x+3$:',options:['$y=4x-1$','$y=-4x+3$','$y=3x+4$','$y=-\\frac{1}{4}x$'],correct:0,explanation:'מקביל = אותו שיפוע $m=4$.'}
+        ]
+    },
+    {
+        id: 98,
+        category: 'geometry',
+        title: 'מרובעים מיוחדים',
+        desc: 'מקבילית, מעוין, מלבן, טרפז',
+        theory: `
+<h3>היררכיית המרובעים</h3>
+<p><strong>מקבילית:</strong> 2 זוגות צלעות מקבילות. אלכסונים חוצים זה את זה.</p>
+<p><strong>מלבן:</strong> מקבילית + כל הזוויות $90°$. אלכסונים שווים.</p>
+<p><strong>מעוין:</strong> מקבילית + כל הצלעות שוות. אלכסונים מאונכים.</p>
+<p><strong>ריבוע:</strong> מלבן + מעוין. כל הצלעות שוות וכל הזוויות $90°$.</p>
+
+<h3>שטחים</h3>
+<div class="formula-box">
+מקבילית: $S=ah$ ∙ מעוין: $S=\\frac{d_1 \\cdot d_2}{2}$ ∙ טרפז: $S=\\frac{(a+b)h}{2}$
+</div>
+
+<div class="tip-box"><strong>טיפ:</strong> כל ריבוע הוא מעוין, וכל מעוין הוא מקבילית — אבל לא להפך!</div>
+        `,
+        questions: [
+            {q:'במקבילית, האלכסונים:',options:['חוצים זה את זה','שווים','מאונכים','חוצים זוויות'],correct:0,explanation:'תכונה מגדירה של מקבילית: אלכסונים חוצים זה את זה.'},
+            {q:'שטח מעוין עם אלכסונים $6$ ו-$8$:',options:['$24$','$48$','$14$','$7$'],correct:0,explanation:'$S=\\frac{6 \\cdot 8}{2}=24$.'},
+            {q:'שטח טרפז עם בסיסים $5$ ו-$9$ וגובה $4$:',options:['$28$','$36$','$20$','$56$'],correct:0,explanation:'$S=\\frac{(5+9) \\cdot 4}{2}=28$.'},
+            {q:'ריבוע הוא מקרה פרטי של:',options:['מלבן ומעוין','רק מלבן','רק מעוין','טרפז'],correct:0,explanation:'ריבוע = מלבן (זוויות $90°$) + מעוין (צלעות שוות).'},
+            {q:'במלבן, האלכסונים:',options:['שווים','מאונכים','חוצים זוויות','לא חוצים זה את זה'],correct:0,explanation:'במלבן אלכסונים שווים באורכם (וגם חוצים זה את זה כי מקבילית).'}
+        ]
+    },
+    {
+        id: 99,
+        category: 'geometry',
+        title: 'חפיפת משולשים',
+        desc: 'משפטי חפיפה ושימושים',
+        theory: `
+<h3>חפיפת משולשים</h3>
+<p>שני משולשים חופפים אם ניתן להניח אחד על השני בדיוק. כל הצלעות והזוויות המתאימות שוות.</p>
+
+<h3>משפטי חפיפה</h3>
+<p><strong>צ.צ.צ:</strong> 3 צלעות שוות.</p>
+<p><strong>צ.ז.צ:</strong> 2 צלעות והזווית ביניהן שוות.</p>
+<p><strong>ז.צ.ז:</strong> 2 זוויות והצלע ביניהן שוות.</p>
+<p><strong>ז.ז.צ:</strong> 2 זוויות וצלע מתאימה (לא בהכרח ביניהן).</p>
+
+<div class="tip-box"><strong>שימו לב:</strong> ז.ז.ז לא מספיק! שני משולשים עם אותן זוויות יכולים להיות בגדלים שונים (דומים אבל לא חופפים).</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$\\triangle ABC$ ו-$\\triangle DEF$ עם $AB=DE=5$, $\\angle A=\\angle D=60°$, $AC=DF=7$.</p>
+<p>חופפים לפי צ.ז.צ.</p>
+</div>
+        `,
+        questions: [
+            {q:'איזה משפט חפיפה: 3 צלעות שוות?',options:['צ.צ.צ','צ.ז.צ','ז.צ.ז','ז.ז.ז'],correct:0,explanation:'צ.צ.צ = 3 צלעות מתאימות שוות.'},
+            {q:'ז.ז.ז מבטיח:',options:['דמיון, לא חפיפה','חפיפה','כלום','חפיפה רק בישר-זווית'],correct:0,explanation:'אותן זוויות = אותה צורה, אבל לא בהכרח אותו גודל.'},
+            {q:'אם $\\triangle ABC \\cong \\triangle DEF$ אז:',options:['$AB=DE, BC=EF, AC=DF$','רק השטחים שווים','הם דומים בלבד','רק הזוויות שוות'],correct:0,explanation:'חפיפה = כל הצלעות והזוויות המתאימות שוות.'},
+            {q:'כמה משפטי חפיפה יש?',options:['$4$','$3$','$5$','$2$'],correct:0,explanation:'צ.צ.צ, צ.ז.צ, ז.צ.ז, ז.ז.צ — ארבעה.'},
+            {q:'למשולשים ישרי-זווית יש משפט חפיפה נוסף:',options:['ניצב-יתר','ז.ז.ז','צ.צ.ז','ז.ז.ז.ז'],correct:0,explanation:'ניצב-יתר: ניצב ויתר שווים → חופפים.'}
+        ]
+    },
+    {
+        id: 100,
+        category: 'geometry',
+        title: 'דמיון משולשים — מתקדם',
+        desc: 'יחסי דמיון ושימושים',
+        theory: `
+<h3>דמיון</h3>
+<p>שני משולשים דומים אם הזוויות שוות ויחסי הצלעות קבועים.</p>
+<div class="formula-box">$$\\frac{AB}{DE} = \\frac{BC}{EF} = \\frac{AC}{DF} = k \\quad \\text{(יחס דמיון)}$$</div>
+
+<h3>משפטי דמיון</h3>
+<p><strong>ז.ז:</strong> 2 זוויות שוות (השלישית שווה אוטומטית).</p>
+<p><strong>צ.צ.צ (יחסי):</strong> יחסי כל 3 הצלעות שווים.</p>
+<p><strong>צ.ז.צ (יחסי):</strong> יחס 2 צלעות שווה + הזווית ביניהן שווה.</p>
+
+<h3>קשר בין שטחים</h3>
+<div class="formula-box">$$\\frac{S_1}{S_2} = k^2$$</div>
+<p>אם יחס הדמיון $k$, יחס השטחים הוא $k^2$.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>יחס דמיון $k=2$. אם שטח המשולש הקטן $= 5$, שטח הגדול $= 5 \\cdot 4 = 20$.</p>
+</div>
+        `,
+        questions: [
+            {q:'אם יחס הדמיון $k=3$, יחס השטחים:',options:['$9$','$3$','$6$','$27$'],correct:0,explanation:'$k^2 = 9$.'},
+            {q:'משפט דמיון ז.ז דורש:',options:['2 זוויות שוות','2 צלעות שוות','3 זוויות','3 צלעות'],correct:0,explanation:'2 זוויות מספיקות (השלישית נגזרת מסכום $180°$).'},
+            {q:'משולשים דומים עם צלעות $3,4,5$ ו-$6,8,?$:',options:['$10$','$9$','$7$','$12$'],correct:0,explanation:'יחס $k=2$: $5 \\cdot 2 = 10$.'},
+            {q:'מרחק על מפה 2 ס"מ = 100 ק"מ. 5 ס"מ =:',options:['250 ק"מ','500 ק"מ','200 ק"מ','50 ק"מ'],correct:0,explanation:'יחס: $\\frac{5}{2} \\cdot 100 = 250$ ק"מ.'},
+            {q:'$\\frac{AB}{DE}=\\frac{1}{4}$ ו-$S_{ABC}=8$. $S_{DEF}=$:',options:['$128$','$32$','$2$','$64$'],correct:0,explanation:'$k=\\frac{1}{4} \\Rightarrow k^2=\\frac{1}{16} \\Rightarrow S_{DEF} = 8 \\cdot 16 = 128$.'}
+        ]
+    },
+    {
+        id: 101,
+        category: 'trigonometry',
+        title: 'ערכי טריגונומטריה — זוויות מיוחדות',
+        desc: 'ערכים מדויקים של 30°, 45°, 60°',
+        theory: `
+<h3>טבלת ערכים</h3>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; text-align:center;">
+<tr style="background:var(--primary);color:white;">
+<td style="padding:8px;border:1px solid #ddd">$\\theta$</td><td style="padding:8px;border:1px solid #ddd">$\\sin$</td><td style="padding:8px;border:1px solid #ddd">$\\cos$</td><td style="padding:8px;border:1px solid #ddd">$\\tan$</td>
+</tr>
+<tr><td style="padding:8px;border:1px solid #ddd">$0°$</td><td style="padding:8px;border:1px solid #ddd">$0$</td><td style="padding:8px;border:1px solid #ddd">$1$</td><td style="padding:8px;border:1px solid #ddd">$0$</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd">$30°$</td><td style="padding:8px;border:1px solid #ddd">$\\frac{1}{2}$</td><td style="padding:8px;border:1px solid #ddd">$\\frac{\\sqrt{3}}{2}$</td><td style="padding:8px;border:1px solid #ddd">$\\frac{1}{\\sqrt{3}}$</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd">$45°$</td><td style="padding:8px;border:1px solid #ddd">$\\frac{\\sqrt{2}}{2}$</td><td style="padding:8px;border:1px solid #ddd">$\\frac{\\sqrt{2}}{2}$</td><td style="padding:8px;border:1px solid #ddd">$1$</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd">$60°$</td><td style="padding:8px;border:1px solid #ddd">$\\frac{\\sqrt{3}}{2}$</td><td style="padding:8px;border:1px solid #ddd">$\\frac{1}{2}$</td><td style="padding:8px;border:1px solid #ddd">$\\sqrt{3}$</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd">$90°$</td><td style="padding:8px;border:1px solid #ddd">$1$</td><td style="padding:8px;border:1px solid #ddd">$0$</td><td style="padding:8px;border:1px solid #ddd">—</td></tr>
+</table>
+
+<div class="tip-box"><strong>טיפ לזכירה:</strong> סינוס: $\\frac{\\sqrt{0}}{2}, \\frac{\\sqrt{1}}{2}, \\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{3}}{2}, \\frac{\\sqrt{4}}{2}$ (מ-$0°$ עד $90°$).</div>
+        `,
+        questions: [
+            {q:'$\\sin 30° =$',options:['$\\frac{1}{2}$','$\\frac{\\sqrt{3}}{2}$','$\\frac{\\sqrt{2}}{2}$','$1$'],correct:0,explanation:'ערך ידוע: $\\sin 30° = \\frac{1}{2}$.'},
+            {q:'$\\cos 60° =$',options:['$\\frac{1}{2}$','$\\frac{\\sqrt{3}}{2}$','$0$','$1$'],correct:0,explanation:'$\\cos 60° = \\frac{1}{2}$. (שימו לב: $\\cos 60°=\\sin 30°$!)'},
+            {q:'$\\tan 45° =$',options:['$1$','$0$','$\\frac{\\sqrt{2}}{2}$','$\\sqrt{2}$'],correct:0,explanation:'$\\tan 45° = \\frac{\\sin 45°}{\\cos 45°} = 1$.'},
+            {q:'$\\sin 90° =$',options:['$1$','$0$','$\\frac{1}{2}$','לא מוגדר'],correct:0,explanation:'$\\sin 90° = 1$.'},
+            {q:'$\\cos 45° =$',options:['$\\frac{\\sqrt{2}}{2}$','$\\frac{1}{2}$','$1$','$\\frac{\\sqrt{3}}{2}$'],correct:0,explanation:'$\\cos 45° = \\frac{\\sqrt{2}}{2} \\approx 0.707$.'}
+        ]
+    },
+    {
+        id: 102,
+        category: 'trigonometry',
+        title: 'משוואות טריגונומטריות — שיטות פתרון',
+        desc: 'פתרון $\\sin x = a$, $\\cos x = a$',
+        theory: `
+<h3>$\\sin x = a$</h3>
+<p>אם $|a| \\leq 1$:</p>
+<div class="formula-box">$$x = \\alpha + 360°n \\quad \\text{או} \\quad x = 180°-\\alpha + 360°n$$</div>
+<p>כאשר $\\alpha = \\arcsin(a)$ ו-$n$ שלם.</p>
+
+<h3>$\\cos x = a$</h3>
+<div class="formula-box">$$x = \\pm\\alpha + 360°n \\quad (\\alpha = \\arccos(a))$$</div>
+
+<h3>$\\tan x = a$</h3>
+<div class="formula-box">$$x = \\alpha + 180°n \\quad (\\alpha = \\arctan(a))$$</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$\\sin x = \\frac{1}{2}$ → $x = 30° + 360°n$ או $x = 150° + 360°n$.</p>
+<p>$\\cos x = 0$ → $x = 90° + 360°n$ או $x = -90°+360°n = 90°+180°n$.</p>
+</div>
+        `,
+        questions: [
+            {q:'$\\sin x = 0$ פתרונות ב-$[0°, 360°]$:',options:['$0°, 180°, 360°$','$0°, 90°$','$90°, 270°$','$0°$'],correct:0,explanation:'$\\sin x=0$ ב-$0°, 180°, 360°$.'},
+            {q:'$\\cos x = 1$ פתרון ב-$[0°, 360°]$:',options:['$0°$ (ו-$360°$)','$90°$','$180°$','$270°$'],correct:0,explanation:'$\\cos 0°=1$. הפתרון היחיד.'},
+            {q:'$\\tan x = 1$ פתרונות ב-$[0°, 360°)$:',options:['$45°, 225°$','$45°$','$45°, 135°$','$45°, 315°$'],correct:0,explanation:'$\\tan 45°=1$, ו-$45°+180°=225°$.'},
+            {q:'ל-$\\sin x = 2$ יש:',options:['אין פתרון','$x=2$','$x=90°$','אינסוף פתרונות'],correct:0,explanation:'$|\\sin x| \\leq 1$, לכן $\\sin x = 2$ בלתי אפשרי.'},
+            {q:'$\\cos x = -\\frac{1}{2}$ ב-$[0°, 360°)$:',options:['$120°, 240°$','$60°, 300°$','$150°, 210°$','$120°$'],correct:0,explanation:'$\\arccos(-\\frac{1}{2})=120°$, ו-$360°-120°=240°$.'}
+        ]
+    },
+    {
+        id: 103,
+        category: 'trigonometry',
+        title: 'הוכחת זהויות טריגונומטריות',
+        desc: 'שיטות להוכחת שוויונות',
+        theory: `
+<h3>שיטות הוכחה</h3>
+<p><strong>שיטה 1:</strong> עבדו על צד אחד בלבד עד שמגיעים לצד השני.</p>
+<p><strong>שיטה 2:</strong> עבדו על שני הצדדים ותראו שמגיעים לביטוי זהה.</p>
+<p><strong>שיטה 3:</strong> הפחיתו צד מצד ותראו שמקבלים 0.</p>
+
+<h3>כלים שימושיים</h3>
+<p>• $\\sin^2 x + \\cos^2 x = 1$</p>
+<p>• $\\tan x = \\frac{\\sin x}{\\cos x}$</p>
+<p>• $1+\\tan^2 x = \\frac{1}{\\cos^2 x}$</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>הוכיחו: $\\frac{\\sin x}{\\cos x}+\\frac{\\cos x}{\\sin x} = \\frac{1}{\\sin x \\cos x}$</p>
+<p>צד שמאל: $\\frac{\\sin^2 x + \\cos^2 x}{\\sin x \\cos x} = \\frac{1}{\\sin x \\cos x}$ ✓</p>
+</div>
+        `,
+        questions: [
+            {q:'$\\sin^2 x + \\cos^2 x =$',options:['$1$','$0$','$\\sin 2x$','$2$'],correct:0,explanation:'זהות פיתגורית יסודית.'},
+            {q:'$\\frac{\\sin x}{\\cos x} =$',options:['$\\tan x$','$\\cot x$','$\\sec x$','$1$'],correct:0,explanation:'הגדרת טנגנס.'},
+            {q:'$(1-\\sin^2 x) =$',options:['$\\cos^2 x$','$\\sin^2 x$','$1$','$\\tan^2 x$'],correct:0,explanation:'מהזהות: $\\cos^2 x = 1-\\sin^2 x$.'},
+            {q:'$\\tan^2 x + 1 =$',options:['$\\frac{1}{\\cos^2 x}$','$\\frac{1}{\\sin^2 x}$','$1$','$\\sec x$'],correct:0,explanation:'$\\frac{\\sin^2 x}{\\cos^2 x}+1 = \\frac{\\sin^2 x+\\cos^2 x}{\\cos^2 x} = \\frac{1}{\\cos^2 x}$.'},
+            {q:'בהוכחת זהות, מומלץ:',options:['לעבוד על צד אחד','להכפיל ב-0','להציב ערכים','לגזור'],correct:0,explanation:'עובדים על הצד ה"מסובך" עד שמגיעים לצד השני.'}
+        ]
+    },
+    {
+        id: 104,
+        category: 'trigonometry',
+        title: 'טריגונומטריה יישומית',
+        desc: 'בעיות מילוליות עם טריגונומטריה',
+        theory: `
+<h3>שימושים במציאות</h3>
+<p><strong>זווית הגבהה:</strong> הזווית כלפי מעלה מקו האופק.</p>
+<p><strong>זווית שקיעה:</strong> הזווית כלפי מטה מקו האופק.</p>
+
+<h3>שיטת פתרון</h3>
+<p>1. שרטטו סקיצה.</p>
+<p>2. סמנו את הזוויות והצלעות הידועות.</p>
+<p>3. זהו משולש ישר-זווית.</p>
+<p>4. השתמשו ב-$\\sin$/$\\cos$/$\\tan$ בהתאם.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה — גובה בניין</div>
+<p>עומדים 50 מ' מבניין. זווית הגבהה לגג = $60°$. גובה הבניין?</p>
+<p>$\\tan 60° = \\frac{h}{50} \\Rightarrow h = 50\\sqrt{3} \\approx 86.6$ מ'</p>
+</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה — רוחב נהר</div>
+<p>רוחב נהר: מודדים 100 מ' לאורך הגדה, זווית ישירה לעץ בצד השני = $35°$.</p>
+<p>$\\tan 35° = \\frac{d}{100} \\Rightarrow d = 100 \\tan 35° \\approx 70$ מ'</p>
+</div>
+        `,
+        questions: [
+            {q:'זווית הגבהה $45°$, מרחק 20 מטר. הגובה:',options:['20 מטר','10 מטר','$20\\sqrt{2}$ מטר','40 מטר'],correct:0,explanation:'$\\tan 45°=1 \\Rightarrow h=20$ מטר.'},
+            {q:'סולם באורך 10 מטר נשען בזווית $60°$. לאיזה גובה מגיע?',options:['$5\\sqrt{3}$ מטר','5 מטר','10 מטר','$10\\sqrt{3}$ מטר'],correct:0,explanation:'$\\sin 60° = \\frac{h}{10} \\Rightarrow h = 10 \\cdot \\frac{\\sqrt{3}}{2} = 5\\sqrt{3}$.'},
+            {q:'מגדל בגובה 100 מטר. זווית שקיעה לנקודה $= 30°$. המרחק:',options:['$100\\sqrt{3}$ מטר','50 מטר','200 מטר','$50\\sqrt{3}$ מטר'],correct:0,explanation:'$\\tan 30° = \\frac{100}{d} \\Rightarrow d = \\frac{100}{\\frac{1}{\\sqrt{3}}} = 100\\sqrt{3}$.'},
+            {q:'זווית הגבהה היא:',options:['זווית מהאופק כלפי מעלה','זווית מהאופק כלפי מטה','זווית ישרה','זווית חדה'],correct:0,explanation:'הגבהה = מסתכלים מעלה מקו האופק.'},
+            {q:'אם $\\sin \\theta = 0.6$ וניצב = 30, היתר:',options:['$50$','$18$','$36$','$30$'],correct:0,explanation:'$\\sin \\theta = \\frac{30}{\\text{יתר}} = 0.6 \\Rightarrow \\text{יתר} = 50$.'}
+        ]
+    },
+    {
+        id: 105,
+        category: 'probability',
+        title: 'עצי הסתברות',
+        desc: 'ייצוג ופתרון בעיות בשלבים',
+        theory: `
+<h3>מהו עץ הסתברות?</h3>
+<p>תרשים המראה את כל התוצאות האפשריות בניסוי רב-שלבי. כל ענף מייצג אפשרות עם ההסתברות שלה.</p>
+
+<h3>כללים</h3>
+<p>• <strong>לאורך ענף:</strong> כופלים הסתברויות.</p>
+<p>• <strong>בין ענפים:</strong> מחברים (כי הם זרים).</p>
+<p>• הסתברויות היוצאות מכל צומת מסתכמות ל-1.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>שקית: 3 אדומים, 2 כחולים. שולפים 2 ללא החזרה.</p>
+<p>$P(\\text{2 אדומים}) = \\frac{3}{5} \\cdot \\frac{2}{4} = \\frac{6}{20} = \\frac{3}{10}$</p>
+<p>$P(\\text{אדום ואז כחול}) = \\frac{3}{5} \\cdot \\frac{2}{4} = \\frac{6}{20} = \\frac{3}{10}$</p>
+</div>
+
+<div class="tip-box"><strong>עם/בלי החזרה:</strong> בלי החזרה — ההסתברויות משתנות. עם החזרה — נשארות.</div>
+        `,
+        questions: [
+            {q:'לאורך ענף בעץ הסתברות:',options:['כופלים','מחברים','מחסרים','ממצעים'],correct:0,explanation:'הסתברות שרשרת אירועים = מכפלת ההסתברויות.'},
+            {q:'3 לבנים, 2 שחורים. שולפים 2 עם החזרה. $P(\\text{2 לבנים})$:',options:['$\\frac{9}{25}$','$\\frac{6}{20}$','$\\frac{3}{10}$','$\\frac{1}{5}$'],correct:0,explanation:'$\\frac{3}{5} \\cdot \\frac{3}{5} = \\frac{9}{25}$ (עם החזרה — אותן הסתברויות).'},
+            {q:'מטיל מטבע 2 פעמים. $P(\\text{2 עץ})$:',options:['$\\frac{1}{4}$','$\\frac{1}{2}$','$\\frac{1}{3}$','$1$'],correct:0,explanation:'$\\frac{1}{2} \\cdot \\frac{1}{2} = \\frac{1}{4}$.'},
+            {q:'בעץ הסתברות, ענפים מאותו צומת מסתכמים ל:',options:['$1$','$0$','$0.5$','תלוי'],correct:0,explanation:'כל האפשרויות מצומת = 100% = 1.'},
+            {q:'4 אדומים, 6 כחולים. שולפים 2 ללא החזרה. $P(\\text{שניהם כחולים})$:',options:['$\\frac{1}{3}$','$\\frac{9}{25}$','$\\frac{6}{10}$','$\\frac{2}{5}$'],correct:0,explanation:'$\\frac{6}{10} \\cdot \\frac{5}{9} = \\frac{30}{90} = \\frac{1}{3}$.'}
+        ]
+    },
+    {
+        id: 106,
+        category: 'probability',
+        title: 'טבלאות שכיחות',
+        desc: 'ארגון נתונים וחישוב מדדים',
+        theory: `
+<h3>טבלת שכיחות</h3>
+<p>מארגנת נתונים לפי ערכים וכמה פעמים הם מופיעים:</p>
+
+<table style="width:80%;border-collapse:collapse;margin:15px auto;text-align:center;">
+<tr style="background:var(--primary);color:white;"><td style="padding:8px;border:1px solid #ddd">ערך</td><td style="padding:8px;border:1px solid #ddd">שכיחות</td><td style="padding:8px;border:1px solid #ddd">שכיחות יחסית</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd">5</td><td style="padding:8px;border:1px solid #ddd">3</td><td style="padding:8px;border:1px solid #ddd">$3/10$</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd">7</td><td style="padding:8px;border:1px solid #ddd">5</td><td style="padding:8px;border:1px solid #ddd">$5/10$</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd">9</td><td style="padding:8px;border:1px solid #ddd">2</td><td style="padding:8px;border:1px solid #ddd">$2/10$</td></tr>
+</table>
+
+<h3>שכיחות מצטברת</h3>
+<p>סכום השכיחויות עד ערך מסוים. שימושי למציאת חציון.</p>
+
+<div class="tip-box"><strong>חציון:</strong> הערך האמצעי כשמסדרים. אם $n$ זוגי: ממוצע שני האמצעיים.</div>
+        `,
+        questions: [
+            {q:'שכיחות = כמה פעמים ערך:',options:['מופיע','הוא הממוצע','הוא המקסימום','שונה'],correct:0,explanation:'שכיחות = מספר ההופעות של ערך.'},
+            {q:'שכיחות יחסית = שכיחות חלקי:',options:['סה"כ תצפיות','ערך מקסימלי','ממוצע','שכיחות מצטברת'],correct:0,explanation:'$\\text{שכיחות יחסית} = \\frac{\\text{שכיחות}}{n}$.'},
+            {q:'ציונים: 80,80,90,90,90,100. החציון:',options:['$90$','$85$','$88.3$','$100$'],correct:0,explanation:'6 ערכים, אמצעיים: 3+4 = $\\frac{90+90}{2}=90$.'},
+            {q:'סכום כל השכיחויות היחסיות שווה ל:',options:['$1$','$100$','תלוי ב-$n$','$0.5$'],correct:0,explanation:'סכום כל השכיחויות היחסיות = $\\frac{n}{n}=1$.'},
+            {q:'שכיח (מודה) של $3,5,5,7,7,7,9$:',options:['$7$','$5$','$6$','$9$'],correct:0,explanation:'$7$ מופיע הכי הרבה (3 פעמים).'}
+        ]
+    },
+    {
+        id: 107,
+        category: 'probability',
+        title: 'הסתברות גיאומטרית',
+        desc: 'הסתברות על בסיס שטח ואורך',
+        theory: `
+<h3>הרעיון</h3>
+<p>כשמרחב המדגם הוא רציף (לא בדיד), ההסתברות מחושבת לפי יחס שטחים/אורכים:</p>
+<div class="formula-box">$$P = \\frac{\\text{שטח/אורך אזור ההצלחה}}{\\text{שטח/אורך כולל}}$$</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה — מטרה</div>
+<p>מטרה עגולה ברדיוס 10, מרכזה (הבול) רדיוס 2.</p>
+<p>$P(\\text{בול}) = \\frac{\\pi \\cdot 4}{\\pi \\cdot 100} = \\frac{4}{100} = 4\\%$</p>
+</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה — זמן המתנה</div>
+<p>אוטובוס מגיע כל 20 דקות. מה הסיכוי להמתין פחות מ-5 דקות?</p>
+<p>$P = \\frac{5}{20} = 25\\%$</p>
+</div>
+        `,
+        questions: [
+            {q:'ריבוע $10 \\times 10$ עם עיגול פנימי $r=5$. $P(\\text{נפילה בעיגול})$:',options:['$\\frac{\\pi}{4}$','$\\frac{1}{2}$','$\\frac{1}{4}$','$\\pi$'],correct:0,explanation:'$\\frac{\\pi \\cdot 25}{100} = \\frac{\\pi}{4} \\approx 78.5\\%$.'},
+            {q:'קטע $[0,10]$. בוחרים נקודה באקראי. $P(x<3)$:',options:['$0.3$','$0.03$','$3$','$0.7$'],correct:0,explanation:'$\\frac{3}{10}=0.3$.'},
+            {q:'מטרה: רדיוס חיצוני 20, רדיוס פנימי 5. $P(\\text{טבעת})$:',options:['$\\frac{15}{16}$','$\\frac{1}{4}$','$\\frac{3}{4}$','$\\frac{1}{16}$'],correct:0,explanation:'$P(\\text{טבעת}) = \\frac{400\\pi-25\\pi}{400\\pi} = \\frac{375}{400}= \\frac{15}{16}$.'},
+            {q:'אוטובוס כל 15 דקות. $P(\\text{המתנה $<$ 5 דקות})$:',options:['$\\frac{1}{3}$','$\\frac{1}{5}$','$\\frac{2}{3}$','$\\frac{1}{15}$'],correct:0,explanation:'$\\frac{5}{15}=\\frac{1}{3}$.'},
+            {q:'הסתברות גיאומטרית משתמשת ב:',options:['יחס שטחים/אורכים','מספר תוצאות','עצי הסתברות','טבלאות'],correct:0,explanation:'ההסתברות = יחס אזור ההצלחה לאזור הכולל.'}
+        ]
+    },
+    {
+        id: 108,
+        category: 'probability',
+        title: 'משתנה מקרי',
+        desc: 'הגדרה, התפלגות, תוחלת ושונות',
+        theory: `
+<h3>הגדרה</h3>
+<p>משתנה מקרי $X$ הוא פונקציה שמשייכת ערך מספרי לכל תוצאה של ניסוי.</p>
+
+<h3>טבלת התפלגות</h3>
+<p>רושמים את כל ערכי $X$ וההסתברויות שלהם. סכום ההסתברויות = 1.</p>
+
+<h3>תוחלת ושונות</h3>
+<div class="formula-box">
+$$E(X) = \\sum x_i P(x_i) \\qquad \\text{Var}(X) = E(X^2) - [E(X)]^2$$
+</div>
+<p>$\\sigma = \\sqrt{\\text{Var}(X)}$ = סטיית תקן.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$X$ = מספר עצים ב-2 הטלות מטבע:</p>
+<p>$P(0)=\\frac{1}{4}, P(1)=\\frac{1}{2}, P(2)=\\frac{1}{4}$</p>
+<p>$E(X) = 0 \\cdot \\frac{1}{4}+1 \\cdot \\frac{1}{2}+2 \\cdot \\frac{1}{4} = 1$</p>
+</div>
+        `,
+        questions: [
+            {q:'סכום ההסתברויות בטבלת התפלגות:',options:['$1$','$0$','תלוי ב-$X$','$0.5$'],correct:0,explanation:'כל ההסתברויות מסתכמות ל-1.'},
+            {q:'$P(X=1)=0.3, P(X=2)=0.5, P(X=3)=?$',options:['$0.2$','$0.3$','$0$','$1$'],correct:0,explanation:'$0.3+0.5+P(3)=1 \\Rightarrow P(3)=0.2$.'},
+            {q:'$E(X)$ אם $P(0)=0.5, P(10)=0.5$:',options:['$5$','$0$','$10$','$7.5$'],correct:0,explanation:'$0 \\cdot 0.5+10 \\cdot 0.5=5$.'},
+            {q:'שונות מודדת:',options:['פיזור סביב הממוצע','ערך ממוצע','ערך מרבי','הסתברות'],correct:0,explanation:'שונות = כמה הערכים מפוזרים סביב התוחלת.'},
+            {q:'$\\sigma = \\sqrt{\\text{Var}(X)}$ נקראת:',options:['סטיית תקן','תוחלת','שונות','חציון'],correct:0,explanation:'סטיית תקן = שורש השונות.'}
+        ]
+    },
+    {
+        id: 109,
+        category: 'sequences',
+        title: 'הוכחה באינדוקציה',
+        desc: 'שיטת הוכחה עבור טענות על מספרים טבעיים',
+        theory: `
+<h3>עקרון האינדוקציה</h3>
+<p>שיטה להוכיח שטענה נכונה <strong>לכל</strong> מספר טבעי $n$:</p>
+<p><strong>שלב 1 (בסיס):</strong> הוכיחו שהטענה נכונה ל-$n=1$.</p>
+<p><strong>שלב 2 (צעד):</strong> הניחו שנכונה ל-$n=k$ (הנחת האינדוקציה), והוכיחו ל-$n=k+1$.</p>
+
+<div class="tip-box"><strong>מטאפורה:</strong> כמו דומינו — אם החלק הראשון נופל (בסיס), וכל חלק שנופל מפיל את הבא (צעד), כולם נופלים!</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה — $1+2+...+n = \\frac{n(n+1)}{2}$</div>
+<p><strong>בסיס:</strong> $n=1$: $1=\\frac{1 \\cdot 2}{2}=1$ ✓</p>
+<p><strong>צעד:</strong> נניח $1+2+...+k=\\frac{k(k+1)}{2}$.</p>
+<p>$1+2+...+k+(k+1) = \\frac{k(k+1)}{2}+(k+1) = \\frac{k(k+1)+2(k+1)}{2} = \\frac{(k+1)(k+2)}{2}$ ✓</p>
+</div>
+        `,
+        questions: [
+            {q:'השלב הראשון באינדוקציה:',options:['הוכחה למקרה הבסיסי','הנחה','צעד','מסקנה'],correct:0,explanation:'בסיס האינדוקציה — מוכיחים ל-$n=1$ (או הערך הראשון).'},
+            {q:'בצעד האינדוקציה, מניחים שהטענה נכונה ל:',options:['$n=k$','$n=k+1$','$n=1$','כל $n$'],correct:0,explanation:'מניחים ל-$k$ ומוכיחים ל-$k+1$.'},
+            {q:'אינדוקציה מוכיחה טענה עבור:',options:['כל $n$ טבעי','$n$ מסוים','$n$ זוגי בלבד','מספרים ממשיים'],correct:0,explanation:'האינדוקציה מוכיחה לכל מספר טבעי (מהבסיס ומעלה).'},
+            {q:'בלי שלב הבסיס, האינדוקציה:',options:['לא תקפה','עדיין עובדת','חלקית','תלויה בטענה'],correct:0,explanation:'בלי בסיס, אין "דומינו ראשון" — אין הוכחה.'},
+            {q:'אחרי הוכחת בסיס וצעד, המסקנה:',options:['הטענה נכונה לכל $n \\geq 1$','הטענה נכונה ל-$n=1,2$','צריך עוד שלבים','הטענה סבירה'],correct:0,explanation:'עקרון האינדוקציה: בסיס + צעד = הוכחה מלאה.'}
+        ]
+    },
+    {
+        id: 110,
+        category: 'sequences',
+        title: 'גבול סדרה',
+        desc: 'מושג ההתכנסות וחישוב גבולות',
+        theory: `
+<h3>מהו גבול סדרה?</h3>
+<p>$\\lim_{n \\to \\infty} a_n = L$ אומר שהאיברים מתקרבים ל-$L$ ככל ש-$n$ גדל.</p>
+
+<h3>כללים חשובים</h3>
+<p>• $\\lim \\frac{1}{n} = 0$</p>
+<p>• $\\lim \\frac{c}{n^k} = 0$ לכל $k>0$</p>
+<p>• $\\lim q^n = 0$ אם $|q|<1$</p>
+<p>• $\\lim \\frac{an+b}{cn+d} = \\frac{a}{c}$ (מחלקים ב-$n$)</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$\\lim_{n \\to \\infty} \\frac{3n+1}{2n-5} = \\frac{3}{2}$ (מחלקים מונה ומכנה ב-$n$, $\\frac{1}{n} \\to 0$)</p>
+<p>$\\lim_{n \\to \\infty} \\frac{n^2+1}{3n^2} = \\frac{1}{3}$ (מחלקים ב-$n^2$)</p>
+</div>
+        `,
+        questions: [
+            {q:'$\\lim_{n \\to \\infty} \\frac{1}{n} =$',options:['$0$','$1$','$\\infty$','לא קיים'],correct:0,explanation:'ככל ש-$n$ גדל, $\\frac{1}{n}$ מתקרב ל-0.'},
+            {q:'$\\lim_{n \\to \\infty} \\frac{5n}{2n+1} =$',options:['$\\frac{5}{2}$','$5$','$0$','$\\infty$'],correct:0,explanation:'$\\frac{5n}{2n+1} = \\frac{5}{2+\\frac{1}{n}} \\to \\frac{5}{2}$.'},
+            {q:'$\\lim_{n \\to \\infty} (0.9)^n =$',options:['$0$','$0.9$','$1$','$\\infty$'],correct:0,explanation:'$|0.9|<1 \\Rightarrow 0.9^n \\to 0$.'},
+            {q:'$\\lim_{n \\to \\infty} \\frac{n}{n^2+1} =$',options:['$0$','$1$','$\\infty$','$\\frac{1}{2}$'],correct:0,explanation:'$\\frac{n}{n^2+1} = \\frac{1}{n+\\frac{1}{n}} \\to 0$ (מעלת מכנה גבוהה יותר).'},
+            {q:'סדרה מתכנסת אם:',options:['יש לה גבול סופי','היא עולה','היא חסומה','היא מונוטונית'],correct:0,explanation:'מתכנסת = יש $L$ סופי שאליו מתקרבים.'}
+        ]
+    },
+    {
+        id: 111,
+        category: 'sequences',
+        title: 'סדרות בבעיות מילוליות',
+        desc: 'זיהוי סדרות בהקשרים מעשיים',
+        theory: `
+<h3>זיהוי סדרה חשבונית</h3>
+<p>תוספת קבועה בכל שלב: משכורת עולה ב-500₪ כל שנה, בריכה מתמלאת בקצב קבוע.</p>
+
+<h3>זיהוי סדרה הנדסית</h3>
+<p>כפולה קבועה: ריבית דריבית, גדילת חיידקים (הכפלה), פחת.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה — חיסכון</div>
+<p>מפקידים 500₪ בחודש הראשון, ועוד 100₪ כל חודש.</p>
+<p>חודש 1: 500, חודש 2: 600, חודש 3: 700...</p>
+<p>$a_n = 500 + (n-1) \\cdot 100 = 400+100n$ (חשבונית, $d=100$)</p>
+<p>סה"כ ב-12 חודשים: $S_{12} = \\frac{12(500+1600)}{2} = 12{,}600$ ₪</p>
+</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה — חיידקים</div>
+<p>100 חיידקים, מכפילים עצמם כל שעה.</p>
+<p>$a_n = 100 \\cdot 2^{n-1}$</p>
+<p>אחרי 10 שעות: $100 \\cdot 2^9 = 51{,}200$</p>
+</div>
+        `,
+        questions: [
+            {q:'משכורת ראשונה 8000₪, עלייה של 3% בשנה. סוג הסדרה:',options:['הנדסית','חשבונית','לא סדרה','קבועה'],correct:0,explanation:'עלייה באחוז קבוע = כפל ב-$q=1.03$ = הנדסית.'},
+            {q:'מכונית $b$ שווה 120,000₪, מאבדת 10,000₪ בשנה. ערכה אחרי $n$ שנים:',options:['$120000-10000n$','$120000 \\cdot 0.9^n$','$120000+10000n$','$10000n$'],correct:0,explanation:'ירידה קבועה (לא באחוז) = חשבונית: $a_n = 120000-10000n$.'},
+            {q:'100 חיידקים × 3 כל שעה. אחרי 5 שעות:',options:['$24300$','$1500$','$300$','$500$'],correct:0,explanation:'$100 \\cdot 3^5 = 100 \\cdot 243 = 24300$.'},
+            {q:'מדרגות: 20 ס"מ כל מדרגה. גובה אחרי $n$ מדרגות:',options:['$20n$ ס"מ','$20^n$ ס"מ','$20+n$ ס"מ','$\\frac{20}{n}$ ס"מ'],correct:0,explanation:'תוספת קבועה = חשבונית: $a_n = 20n$.'},
+            {q:'הפקדה 10,000₪ בריבית 5% שנתית. ערך אחרי 3 שנים:',options:['$11{,}576$','$11{,}500$','$13{,}000$','$10{,}500$'],correct:0,explanation:'$10000 \\cdot 1.05^3 = 10000 \\cdot 1.157625 \\approx 11{,}576$.'}
+        ]
+    },
+    {
+        id: 112,
+        category: 'sequences',
+        title: 'שברים מחזוריים וסדרות',
+        desc: 'המרת שבר מחזורי לפשוט באמצעות סדרה הנדסית',
+        theory: `
+<h3>הקשר</h3>
+<p>שבר עשרוני מחזורי הוא בעצם סכום סדרה הנדסית אינסופית!</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה — $0.\\overline{3}$</div>
+<p>$0.333... = \\frac{3}{10}+\\frac{3}{100}+\\frac{3}{1000}+...$</p>
+<p>$a_1 = \\frac{3}{10}$, $q = \\frac{1}{10}$</p>
+<p>$S = \\frac{\\frac{3}{10}}{1-\\frac{1}{10}} = \\frac{\\frac{3}{10}}{\\frac{9}{10}} = \\frac{3}{9} = \\frac{1}{3}$</p>
+</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה — $0.\\overline{12}$</div>
+<p>$= \\frac{12}{100}+\\frac{12}{10000}+... = \\frac{\\frac{12}{100}}{1-\\frac{1}{100}} = \\frac{12}{99} = \\frac{4}{33}$</p>
+</div>
+
+<div class="tip-box"><strong>קיצור:</strong> $0.\\overline{ab} = \\frac{ab}{99}$, $0.\\overline{abc} = \\frac{abc}{999}$</div>
+        `,
+        questions: [
+            {q:'$0.\\overline{9} =$',options:['$1$','$0.9$','$\\frac{9}{10}$','$0.99$'],correct:0,explanation:'$\\frac{9}{9}=1$. כן, $0.999...=1$ בדיוק!'},
+            {q:'$0.\\overline{6} =$',options:['$\\frac{2}{3}$','$\\frac{6}{10}$','$\\frac{3}{5}$','$\\frac{6}{9}$'],correct:0,explanation:'$\\frac{6}{9}=\\frac{2}{3}$.'},
+            {q:'$0.\\overline{27} =$',options:['$\\frac{3}{11}$','$\\frac{27}{100}$','$\\frac{9}{33}$','$\\frac{27}{99}$'],correct:0,explanation:'$\\frac{27}{99}=\\frac{3}{11}$.'},
+            {q:'$0.\\overline{142857} =$',options:['$\\frac{1}{7}$','$\\frac{142857}{999999}$','$\\frac{1}{6}$','$\\frac{1}{8}$'],correct:0,explanation:'$\\frac{142857}{999999}=\\frac{1}{7}$ (זהו ייצוג עשרוני של $\\frac{1}{7}$).'},
+            {q:'הנוסחה $\\frac{a_1}{1-q}$ מחשבת:',options:['סכום סדרה הנדסית אינסופית','סכום סופי','ממוצע','תוחלת'],correct:0,explanation:'כש-$|q|<1$, זהו סכום הסדרה ההנדסית האינסופית.'}
+        ]
+    },
+    {
+        id: 113,
+        category: 'algebra',
+        title: 'מערכות משוואות — 3 נעלמים',
+        desc: 'פתרון מערכת עם 3 משוואות ו-3 נעלמים',
+        theory: `
+<h3>שיטה</h3>
+<p>1. בחרו נעלם לסילוק.</p>
+<p>2. סלקו אותו משתי זוגות משוואות → מערכת של 2 משוואות ב-2 נעלמים.</p>
+<p>3. פתרו את המערכת החדשה.</p>
+<p>4. הציבו בחזרה למציאת הנעלם השלישי.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$x+y+z=6$, $2x-y+z=3$, $x+2y-z=5$</p>
+<p>חיבור (1)+(3): $2x+3y=11$</p>
+<p>חיבור (2)+(3): $3x+y=8$</p>
+<p>מהמערכת: $y=8-3x$ → $2x+3(8-3x)=11$ → $x=\\frac{13}{7}$</p>
+</div>
+        `,
+        questions: [
+            {q:'מערכת 3 משוואות ב-3 נעלמים: כמה פתרונות בד"כ?',options:['$1$','$3$','$0$','אינסוף'],correct:0,explanation:'מערכת קבועה (לא תלויה) נותנת פתרון יחיד.'},
+            {q:'$x+y=5, x-y=1$: $x=$',options:['$3$','$2$','$4$','$5$'],correct:0,explanation:'חיבור: $2x=6 \\Rightarrow x=3$.'},
+            {q:'$x+y+z=10, x=2, y=3$: $z=$',options:['$5$','$10$','$15$','$0$'],correct:0,explanation:'$2+3+z=10 \\Rightarrow z=5$.'},
+            {q:'השלב הראשון בפתרון מערכת 3×3:',options:['סילוק נעלם אחד','ניחוש','ציור גרף','הצבת 0'],correct:0,explanation:'מסלקים נעלם אחד כדי לקבל מערכת 2×2.'},
+            {q:'אם 2 משוואות סותרות (כמו $0=5$), למערכת:',options:['אין פתרון','פתרון יחיד','אינסוף','3 פתרונות'],correct:0,explanation:'סתירה = המערכת לא עקבית → אין פתרון.'}
+        ]
+    },
+    {
+        id: 114,
+        category: 'algebra',
+        title: 'עריכת נוסחאות',
+        desc: 'בידוד משתנה בנוסחה',
+        theory: `
+<h3>מה עושים?</h3>
+<p>נתונה נוסחה — צריך לבודד משתנה מסוים. כלומר, "להפוך" את הנוסחה כך שהמשתנה יהיה לבד בצד אחד.</p>
+
+<h3>כללים</h3>
+<p>• עושים את אותה פעולה לשני הצדדים</p>
+<p>• סדר הפוך: מה שנעשה אחרון — מבטלים ראשון</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$A = \\pi r^2$ → בודדו $r$:</p>
+<p>$\\frac{A}{\\pi} = r^2 \\Rightarrow r = \\sqrt{\\frac{A}{\\pi}}$</p>
+</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$v = v_0 + at$ → בודדו $t$:</p>
+<p>$v - v_0 = at \\Rightarrow t = \\frac{v-v_0}{a}$</p>
+</div>
+        `,
+        questions: [
+            {q:'$y = mx+b$, בודדו $x$:',options:['$x=\\frac{y-b}{m}$','$x=\\frac{y+b}{m}$','$x=ym-b$','$x=my-b$'],correct:0,explanation:'$y-b=mx \\Rightarrow x=\\frac{y-b}{m}$.'},
+            {q:'$A=\\frac{1}{2}bh$, בודדו $h$:',options:['$h=\\frac{2A}{b}$','$h=\\frac{A}{2b}$','$h=2Ab$','$h=\\frac{Ab}{2}$'],correct:0,explanation:'$2A=bh \\Rightarrow h=\\frac{2A}{b}$.'},
+            {q:'$F=ma$, בודדו $a$:',options:['$a=\\frac{F}{m}$','$a=Fm$','$a=F-m$','$a=\\frac{m}{F}$'],correct:0,explanation:'$a=\\frac{F}{m}$.'},
+            {q:'$c^2=a^2+b^2$, בודדו $a$:',options:['$a=\\sqrt{c^2-b^2}$','$a=c-b$','$a=\\sqrt{c^2+b^2}$','$a=c^2-b^2$'],correct:0,explanation:'$a^2=c^2-b^2 \\Rightarrow a=\\sqrt{c^2-b^2}$.'},
+            {q:'$P=2(l+w)$, בודדו $w$:',options:['$w=\\frac{P}{2}-l$','$w=P-2l$','$w=\\frac{P-l}{2}$','$w=2P-l$'],correct:0,explanation:'$\\frac{P}{2}=l+w \\Rightarrow w=\\frac{P}{2}-l$.'}
+        ]
+    },
+    {
+        id: 115,
+        category: 'functions',
+        title: 'ממשק פונקציות — חיתוך',
+        desc: 'מציאת נקודות חיתוך בין גרפים',
+        theory: `
+<h3>מציאת חיתוך</h3>
+<p>נקודות חיתוך בין $y=f(x)$ ו-$y=g(x)$ מתקבלות מפתרון:</p>
+<div class="formula-box">$$f(x) = g(x)$$</div>
+<p>כל פתרון $x_0$ נותן נקודה $(x_0, f(x_0))$.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$f(x) = x^2$ ו-$g(x) = 2x+3$:</p>
+<p>$x^2 = 2x+3 \\Rightarrow x^2-2x-3=0 \\Rightarrow (x-3)(x+1)=0$</p>
+<p>$x=3$: $y=9$. $x=-1$: $y=1$.</p>
+<p>נקודות חיתוך: $(3,9)$ ו-$(-1,1)$.</p>
+</div>
+        `,
+        questions: [
+            {q:'חיתוך $y=x$ ו-$y=x^2$:',options:['$(0,0)$ ו-$(1,1)$','$(0,0)$','$(1,1)$','אין'],correct:0,explanation:'$x=x^2 \\Rightarrow x^2-x=0 \\Rightarrow x(x-1)=0$. $x=0,1$.'},
+            {q:'חיתוך $y=3x+1$ ו-$y=x+5$:',options:['$(2,7)$','$(1,4)$','$(3,10)$','$(4,13)$'],correct:0,explanation:'$3x+1=x+5 \\Rightarrow 2x=4 \\Rightarrow x=2$, $y=7$.'},
+            {q:'ל-$y=x^2+1$ ו-$y=-1$ יש:',options:['0 חיתוכים','1 חיתוך','2 חיתוכים','$\\infty$'],correct:0,explanation:'$x^2+1=-1 \\Rightarrow x^2=-2$ — אין פתרון.'},
+            {q:'מציאת חיתוך = פתרון:',options:['$f(x)=g(x)$','$f(x)+g(x)=0$','$f(x) \\cdot g(x)=0$','$f(x)-g(x)=1$'],correct:0,explanation:'חיתוך = אותו $y$ לאותו $x$: $f(x)=g(x)$.'},
+            {q:'ישר ופרבולה יכולים להיחתך ב:',options:['0, 1, או 2 נקודות','תמיד 2','תמיד 1','0 או 1'],correct:0,explanation:'תלוי בדיסקרימיננטה: $\\Delta<0$: 0, $\\Delta=0$: 1, $\\Delta>0$: 2.'}
+        ]
+    },
+    {
+        id: 116,
+        category: 'functions',
+        title: 'סימטריה של פונקציות',
+        desc: 'זוגיות, אי-זוגיות ומשמעותן',
+        theory: `
+<h3>פונקציה זוגית</h3>
+<p>$f(-x) = f(x)$ — הגרף סימטרי <strong>לציר $y$</strong>.</p>
+<p>דוגמאות: $x^2$, $|x|$, $\\cos x$.</p>
+
+<h3>פונקציה אי-זוגית</h3>
+<p>$f(-x) = -f(x)$ — הגרף סימטרי <strong>לראשית</strong> (סיבוב $180°$).</p>
+<p>דוגמאות: $x^3$, $x$, $\\sin x$.</p>
+
+<div class="tip-box"><strong>טיפ:</strong> רוב הפונקציות לא זוגיות ולא אי-זוגיות! (למשל $x^2+x$)</div>
+
+<div class="example-box">
+<div class="example-title">בדיקה</div>
+<p>$f(x)=x^4-2x^2$: $f(-x)=x^4-2x^2=f(x)$ → <strong>זוגית</strong>.</p>
+<p>$f(x)=x^3-x$: $f(-x)=-x^3+x=-(x^3-x)=-f(x)$ → <strong>אי-זוגית</strong>.</p>
+</div>
+        `,
+        questions: [
+            {q:'$f(x)=x^2$ היא:',options:['זוגית','אי-זוגית','לא זוגית ולא אי-זוגית','שניהם'],correct:0,explanation:'$f(-x)=(-x)^2=x^2=f(x)$ → זוגית.'},
+            {q:'$f(x)=x^3$ היא:',options:['אי-זוגית','זוגית','שניהם','לא שניהם'],correct:0,explanation:'$f(-x)=-x^3=-f(x)$ → אי-זוגית.'},
+            {q:'גרף פונקציה זוגית סימטרי ל:',options:['ציר $y$','ציר $x$','ראשית','$y=x$'],correct:0,explanation:'$f(-x)=f(x)$ → סימטריה ימין-שמאל → ציר $y$.'},
+            {q:'$f(x)=x^2+x$ היא:',options:['לא זוגית ולא אי-זוגית','זוגית','אי-זוגית','שניהם'],correct:0,explanation:'$f(-x)=x^2-x \\neq f(x)$ וגם $\\neq -f(x)$. אף אחד.'},
+            {q:'$\\sin(-x) =$',options:['$-\\sin x$','$\\sin x$','$\\cos x$','$-\\cos x$'],correct:0,explanation:'סינוס אי-זוגי: $\\sin(-x)=-\\sin x$.'}
+        ]
+    },
+    {
+        id: 117,
+        category: 'geometry',
+        title: 'משפט תאלס',
+        desc: 'חלוקה יחסית של צלעות ע"י ישרים מקבילים',
+        theory: `
+<h3>משפט תאלס</h3>
+<p>אם ישר מקביל לצלע אחת של משולש וחותך את שתי הצלעות האחרות, הוא חוצה אותן <strong>באותו יחס</strong>.</p>
+
+<div class="formula-box">$$DE \\parallel BC \\Rightarrow \\frac{AD}{DB} = \\frac{AE}{EC}$$</div>
+
+<h3>משפט תאלס ההפוך</h3>
+<p>אם ישר חוצה שתי צלעות באותו יחס — הוא מקביל לצלע השלישית.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$AD=4, DB=6, AE=3$. מצאו $EC$.</p>
+<p>$\\frac{4}{6} = \\frac{3}{EC} \\Rightarrow EC = \\frac{6 \\cdot 3}{4} = 4.5$</p>
+</div>
+        `,
+        questions: [
+            {q:'$DE \\parallel BC$, $AD=3, DB=9, AE=2$. $EC=$',options:['$6$','$4$','$3$','$18$'],correct:0,explanation:'$\\frac{3}{9}=\\frac{2}{EC} \\Rightarrow EC=6$.'},
+            {q:'משפט תאלס עוסק ב:',options:['ישרים מקבילים החותכים צלעות','שטחים','זוויות','היקפים'],correct:0,explanation:'ישר מקביל לצלע חוצה את האחרות באותו יחס.'},
+            {q:'$DE \\parallel BC$, $AD=DB$. מה $AE:EC$?',options:['$1:1$','$1:2$','$2:1$','תלוי'],correct:0,explanation:'$\\frac{AD}{DB}=1 \\Rightarrow \\frac{AE}{EC}=1 \\Rightarrow AE=EC$.'},
+            {q:'אם $\\frac{AD}{DB}=\\frac{AE}{EC}$ אז:',options:['$DE \\parallel BC$','$DE \\perp BC$','$DE=BC$','שום דבר'],correct:0,explanation:'משפט תאלס ההפוך: יחסים שווים → מקביליות.'},
+            {q:'$DE \\parallel BC$, $AD=2, AB=10$. $\\frac{DE}{BC}=$',options:['$\\frac{1}{5}$','$\\frac{2}{10}$','$\\frac{2}{8}$','$\\frac{1}{4}$'],correct:0,explanation:'$\\frac{AD}{AB}=\\frac{2}{10}=\\frac{1}{5}=\\frac{DE}{BC}$.'}
+        ]
+    },
+    {
+        id: 118,
+        category: 'geometry',
+        title: 'גיאומטריה אנליטית — מעגל',
+        desc: 'משוואת מעגל ושימושים',
+        theory: `
+<h3>משוואת מעגל</h3>
+<p>מעגל עם מרכז $(a,b)$ ורדיוס $r$:</p>
+<div class="formula-box">$$(x-a)^2+(y-b)^2=r^2$$</div>
+<p>מעגל עם מרכז בראשית: $x^2+y^2=r^2$.</p>
+
+<h3>שימושים</h3>
+<p>• <strong>נקודה על המעגל?</strong> הציבו — אם מקבלים שוויון, היא על המעגל.</p>
+<p>• <strong>חיתוך ישר-מעגל:</strong> הציבו $y=mx+b$ במשוואת המעגל ופתרו.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$(x-2)^2+(y+3)^2=25$: מרכז $(2,-3)$, רדיוס $5$.</p>
+<p>$(5,-3)$ על המעגל? $(5-2)^2+(-3+3)^2=9+0=9 \\neq 25$ → לא.</p>
+</div>
+        `,
+        questions: [
+            {q:'מרכז ורדיוס $(x-1)^2+(y-2)^2=16$:',options:['$(1,2)$, $r=4$','$(1,2)$, $r=16$','$(-1,-2)$, $r=4$','$(0,0)$, $r=4$'],correct:0,explanation:'מרכז $(1,2)$, $r=\\sqrt{16}=4$.'},
+            {q:'משוואת מעגל מרכז $(0,0)$ רדיוס 3:',options:['$x^2+y^2=9$','$x^2+y^2=3$','$(x-3)^2+y^2=9$','$x^2+y^2=6$'],correct:0,explanation:'$x^2+y^2=3^2=9$.'},
+            {q:'$(3,4)$ על $x^2+y^2=25$?',options:['כן','לא','על הגבול','בפנים'],correct:0,explanation:'$9+16=25$ ✓'},
+            {q:'$(0,0)$ על $(x-1)^2+y^2=1$?',options:['כן','לא','בפנים','בחוץ'],correct:0,explanation:'$(0-1)^2+0=1$ ✓'},
+            {q:'מעגל עם קוטר בין $(0,0)$ ל-$(6,0)$: מרכז ורדיוס:',options:['$(3,0)$, $r=3$','$(6,0)$, $r=6$','$(0,0)$, $r=3$','$(3,0)$, $r=6$'],correct:0,explanation:'אמצע $=(3,0)$, רדיוס $=\\frac{6}{2}=3$.'}
+        ]
+    },
+    {
+        id: 119,
+        category: 'probability',
+        title: 'הסתברות — עצמאות ותלות',
+        desc: 'מאורעות בלתי תלויים ותלויים',
+        theory: `
+<h3>מאורעות בלתי תלויים</h3>
+<p>$A$ ו-$B$ בלתי תלויים אם: $P(A \\cap B) = P(A) \\cdot P(B)$.</p>
+<p>כלומר, קרות $A$ לא משפיעה על ההסתברות של $B$.</p>
+
+<h3>מאורעות תלויים</h3>
+<p>$P(A \\cap B) = P(A) \\cdot P(B|A)$</p>
+<p>כאשר $P(B|A)$ = הסתברות מותנית (ההסתברות ל-$B$ בהינתן ש-$A$ קרה).</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה — עצמאות</div>
+<p>הטלת קובייה + מטבע: $P(6 \\text{ ועץ}) = \\frac{1}{6} \\cdot \\frac{1}{2} = \\frac{1}{12}$.</p>
+</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה — תלות</div>
+<p>שליפה ללא החזרה: 3 אדומים, 2 כחולים.</p>
+<p>$P(\\text{אדום ואז אדום}) = \\frac{3}{5} \\cdot \\frac{2}{4} = \\frac{6}{20} = \\frac{3}{10}$</p>
+</div>
+        `,
+        questions: [
+            {q:'הטלת 2 קוביות — מאורעות:',options:['בלתי תלויים','תלויים','לא ניתן לקבוע','זרים'],correct:0,explanation:'תוצאת קובייה אחת לא משפיעה על השנייה.'},
+            {q:'שליפה ללא החזרה = מאורעות:',options:['תלויים','בלתי תלויים','זרים','שווים'],correct:0,explanation:'השליפה הראשונה משנה את ההרכב → תלות.'},
+            {q:'$P(A)=0.3, P(B)=0.4$, בלתי תלויים. $P(A \\cap B)=$',options:['$0.12$','$0.7$','$0.1$','$0.3$'],correct:0,explanation:'$P(A \\cap B)=0.3 \\cdot 0.4=0.12$.'},
+            {q:'$P(B|A)=0.5$ ו-$P(B)=0.5$, אז $A$ ו-$B$:',options:['בלתי תלויים','תלויים','זרים','משלימים'],correct:0,explanation:'$P(B|A)=P(B)$ → ידיעת $A$ לא משנה את $P(B)$ → בלתי תלויים.'},
+            {q:'מטילים מטבע 3 פעמים. $P(\\text{3 עצים})=$',options:['$\\frac{1}{8}$','$\\frac{1}{3}$','$\\frac{3}{8}$','$\\frac{1}{6}$'],correct:0,explanation:'$(\\frac{1}{2})^3=\\frac{1}{8}$ (בלתי תלויים).'}
+        ]
+    },
+    {
+        id: 120,
+        category: 'sequences',
+        title: 'סדרות — תרגול כללי',
+        desc: 'בעיות מעורבות בסדרות',
+        theory: `
+<h3>סיכום — מתי להשתמש במה?</h3>
+
+<table style="width:100%;border-collapse:collapse;margin:15px 0;text-align:center;">
+<tr style="background:var(--primary);color:white;"><td style="padding:8px;border:1px solid #ddd">סוג</td><td style="padding:8px;border:1px solid #ddd">איבר כללי</td><td style="padding:8px;border:1px solid #ddd">סכום</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd">חשבונית</td><td style="padding:8px;border:1px solid #ddd">$a_n=a_1+(n-1)d$</td><td style="padding:8px;border:1px solid #ddd">$S_n=\\frac{n(a_1+a_n)}{2}$</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd">הנדסית</td><td style="padding:8px;border:1px solid #ddd">$a_n=a_1 \\cdot q^{n-1}$</td><td style="padding:8px;border:1px solid #ddd">$S_n=a_1 \\cdot \\frac{q^n-1}{q-1}$</td></tr>
+</table>
+
+<div class="tip-box"><strong>זיהוי:</strong> הפרש קבוע → חשבונית. מנה קבועה → הנדסית.</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה מעורבת</div>
+<p>$a_3=12, a_7=24$ בסדרה חשבונית. מצאו $a_1$ ו-$d$.</p>
+<p>$a_7-a_3 = 4d \\Rightarrow 12=4d \\Rightarrow d=3$</p>
+<p>$a_3 = a_1+2d \\Rightarrow 12=a_1+6 \\Rightarrow a_1=6$</p>
+</div>
+        `,
+        questions: [
+            {q:'$2, 6, 18, 54,...$ זו סדרה:',options:['הנדסית','חשבונית','לא סדרה','משולבת'],correct:0,explanation:'$\\frac{6}{2}=\\frac{18}{6}=3$ — מנה קבועה → הנדסית.'},
+            {q:'$a_1=5, d=-2$. $a_{10}=$',options:['$-13$','$-15$','$23$','$-11$'],correct:0,explanation:'$a_{10}=5+9 \\cdot(-2)=5-18=-13$.'},
+            {q:'$a_1=2, q=3$. $S_4=$',options:['$80$','$62$','$120$','$40$'],correct:0,explanation:'$S_4=2 \\cdot \\frac{3^4-1}{3-1}=2 \\cdot \\frac{80}{2}=80$.'},
+            {q:'חשבונית עם $a_1=1, a_{20}=39$. $d=$',options:['$2$','$3$','$1$','$4$'],correct:0,explanation:'$39=1+19d \\Rightarrow d=2$.'},
+            {q:'$a_n=(-1)^n$ זו:',options:['לא חשבונית ולא הנדסית','חשבונית','הנדסית עם $q=-1$','קבועה'],correct:0,explanation:'$\\frac{a_{n+1}}{a_n}=-1$ → הנדסית עם $q=-1$. (אבל גם אפשר לראותה כפשוט מתחלפת.)'}
+        ]
+    },
+    {
+        id: 121,
+        category: 'probability',
+        title: 'קומבינטוריקה — צירופים',
+        desc: 'חישוב צירופים ושימושים',
+        theory: `
+<h3>צירוף</h3>
+<p>מספר הדרכים לבחור $k$ פריטים מתוך $n$ <strong>ללא חשיבות לסדר</strong>:</p>
+<div class="formula-box">$$\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$$</div>
+
+<h3>ההבדל מתמורה</h3>
+<p><strong>תמורה:</strong> הסדר חשוב ($P(n,k) = \\frac{n!}{(n-k)!}$).</p>
+<p><strong>צירוף:</strong> הסדר לא חשוב ($\\binom{n}{k}$).</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>בוחרים ועדה של 3 מתוך 10 אנשים:</p>
+<p>$\\binom{10}{3} = \\frac{10!}{3!7!} = \\frac{10 \\cdot 9 \\cdot 8}{3 \\cdot 2 \\cdot 1} = 120$</p>
+</div>
+
+<div class="tip-box"><strong>מתי צירוף?</strong> "בוחרים", "ועדה", "קבוצה" → סדר לא חשוב → צירוף.</div>
+        `,
+        questions: [
+            {q:'$\\binom{6}{2} =$',options:['$15$','$30$','$12$','$6$'],correct:0,explanation:'$\\frac{6!}{2!4!}=\\frac{30}{2}=15$.'},
+            {q:'$\\binom{n}{0} =$',options:['$1$','$0$','$n$','לא מוגדר'],correct:0,explanation:'יש דרך אחת לבחור 0 פריטים: לא לבחור כלום.'},
+            {q:'$\\binom{n}{n} =$',options:['$1$','$n$','$n!$','$0$'],correct:0,explanation:'דרך אחת לבחור את כולם.'},
+            {q:'$\\binom{5}{2} = \\binom{5}{?}$',options:['$3$','$2$','$4$','$1$'],correct:0,explanation:'$\\binom{n}{k}=\\binom{n}{n-k}$: $\\binom{5}{2}=\\binom{5}{3}$.'},
+            {q:'כמה דרכים לבחור 2 מתוך 8?',options:['$28$','$56$','$16$','$64$'],correct:0,explanation:'$\\binom{8}{2}=\\frac{56}{2}=28$.'}
+        ]
+    },
+    {
+        id: 122,
+        category: 'geometry',
+        title: 'שטחים מורכבים',
+        desc: 'חישוב שטח צורות מורכבות',
+        theory: `
+<h3>שיטות</h3>
+<p><strong>חיבור:</strong> פרקו צורה מורכבת לצורות פשוטות וחברו.</p>
+<p><strong>חיסור:</strong> חשבו שטח גדול והפחיתו את החלקים שלא צריך.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה — טבעת</div>
+<p>מעגל חיצוני $R=10$, מעגל פנימי $r=6$:</p>
+<p>$S = \\pi R^2 - \\pi r^2 = \\pi(100-36) = 64\\pi$</p>
+</div>
+
+<div class="example-box">
+<div class="example-title">דוגמה — צורת L</div>
+<p>מלבן $10 \\times 8$ חסר מלבן $4 \\times 3$ בפינה:</p>
+<p>$S = 80 - 12 = 68$</p>
+</div>
+
+<div class="tip-box"><strong>טיפ:</strong> תמיד שרטטו את הצורה וסמנו מידות! טעויות רבות נגרמות מחוסר סקיצה.</div>
+        `,
+        questions: [
+            {q:'ריבוע $10 \\times 10$ עם עיגול $r=5$ בפנים. שטח השטח שמחוץ לעיגול:',options:['$100-25\\pi$','$100-50\\pi$','$25\\pi$','$100\\pi$'],correct:0,explanation:'$100-\\pi \\cdot 25 = 100-25\\pi$.'},
+            {q:'חצי עיגול $r=4$. שטח:',options:['$8\\pi$','$16\\pi$','$4\\pi$','$32\\pi$'],correct:0,explanation:'$\\frac{1}{2}\\pi r^2 = \\frac{1}{2} \\cdot 16\\pi = 8\\pi$.'},
+            {q:'מלבן $12 \\times 5$ חסר משולש ישר-זווית עם ניצבים $3,4$:',options:['$54$','$60$','$66$','$48$'],correct:0,explanation:'$60-\\frac{1}{2}(3)(4)=60-6=54$.'},
+            {q:'שטח טבעת: $R=7, r=3$:',options:['$40\\pi$','$49\\pi$','$58\\pi$','$4\\pi$'],correct:0,explanation:'$\\pi(49-9)=40\\pi$.'},
+            {q:'שטח רבע עיגול $r=6$:',options:['$9\\pi$','$36\\pi$','$18\\pi$','$6\\pi$'],correct:0,explanation:'$\\frac{1}{4}\\pi \\cdot 36 = 9\\pi$.'}
+        ]
+    },
+    {
+        id: 123,
+        category: 'geometry',
+        title: 'ציר סימטריה',
+        desc: 'סימטריה בגיאומטריה',
+        theory: `
+<h3>ציר סימטריה</h3>
+<p>ישר שחוצה צורה לשני חלקים <strong>זהים</strong> שהם שיקוף זה של זה.</p>
+
+<h3>כמה צירים?</h3>
+<p>• <strong>עיגול:</strong> אינסוף צירים (כל קוטר)</p>
+<p>• <strong>ריבוע:</strong> 4 צירים (2 דרך אמצעי צלעות, 2 אלכסונים)</p>
+<p>• <strong>מלבן:</strong> 2 צירים (דרך אמצעי צלעות)</p>
+<p>• <strong>משולש שווה-שוקיים:</strong> 1 ציר (הגובה לבסיס)</p>
+<p>• <strong>משולש שווה-צלעות:</strong> 3 צירים</p>
+<p>• <strong>מעוין:</strong> 2 צירים (האלכסונים)</p>
+
+<div class="tip-box"><strong>סימטריה בגרף פונקציה:</strong> $f(x)=f(-x)$ = סימטריה לציר $y$. קודקוד פרבולה הוא ציר הסימטריה שלה.</div>
+        `,
+        questions: [
+            {q:'כמה צירי סימטריה לריבוע?',options:['$4$','$2$','$1$','$8$'],correct:0,explanation:'2 דרך אמצעי צלעות + 2 אלכסונים = 4.'},
+            {q:'כמה צירי סימטריה למלבן (שאינו ריבוע)?',options:['$2$','$4$','$1$','$0$'],correct:0,explanation:'2 צירים (דרך אמצעי צלעות).'},
+            {q:'כמה צירי סימטריה למשולש שווה-צלעות?',options:['$3$','$1$','$6$','$0$'],correct:0,explanation:'3 — כל אחד מחבר קודקוד לאמצע הצלע הנגדית.'},
+            {q:'לעיגול יש:',options:['אינסוף צירי סימטריה','1 ציר','2 צירים','4 צירים'],correct:0,explanation:'כל קוטר הוא ציר סימטריה → אינסוף.'},
+            {q:'ציר הסימטריה של $y=x^2-4x+3$:',options:['$x=2$','$x=0$','$x=4$','$x=-2$'],correct:0,explanation:'$x_v = \\frac{4}{2} = 2$. ציר הסימטריה: $x=2$.'}
+        ]
+    },
+    {
+        id: 124,
+        category: 'algebra',
+        title: 'נוסחת השורשים — תרגול',
+        desc: 'שימוש מלא בנוסחת השורשים',
+        theory: `
+<h3>נוסחת השורשים</h3>
+<div class="formula-box">$$x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$$</div>
+
+<h3>שלבי פתרון</h3>
+<p>1. זהו $a$, $b$, $c$.</p>
+<p>2. חשבו $\\Delta = b^2-4ac$.</p>
+<p>3. אם $\\Delta \\geq 0$, הציבו בנוסחה.</p>
+<p>4. פשטו.</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה</div>
+<p>$2x^2+3x-2=0$: $a=2, b=3, c=-2$</p>
+<p>$\\Delta=9+16=25$</p>
+<p>$x=\\frac{-3 \\pm 5}{4}$: $x_1=\\frac{2}{4}=\\frac{1}{2}$, $x_2=\\frac{-8}{4}=-2$</p>
+</div>
+
+<div class="tip-box"><strong>טיפ:</strong> לפני הנוסחה, נסו פירוק! אם $\\Delta$ הוא ריבוע שלם, פירוק לגורמים יהיה מהיר יותר.</div>
+        `,
+        questions: [
+            {q:'$x^2-3x+2=0$:',options:['$x=1, x=2$','$x=-1, x=-2$','$x=3, x=2$','$x=1, x=-2$'],correct:0,explanation:'$(x-1)(x-2)=0$ או: $\\frac{3 \\pm 1}{2}$: $x=2, x=1$.'},
+            {q:'$x^2+4x+4=0$:',options:['$x=-2$ (כפול)','$x=2$','$x=-4$','$x=\\pm 2$'],correct:0,explanation:'$\\Delta=16-16=0$: $x=\\frac{-4}{2}=-2$.'},
+            {q:'$3x^2-x-2=0$:',options:['$x=1, x=-\\frac{2}{3}$','$x=-1, x=\\frac{2}{3}$','$x=2, x=-\\frac{1}{3}$','$x=\\frac{1}{3}, x=-2$'],correct:0,explanation:'$\\Delta=1+24=25$. $x=\\frac{1 \\pm 5}{6}$: $x=1$ או $x=-\\frac{2}{3}$.'},
+            {q:'$x^2=16$:',options:['$x=\\pm 4$','$x=4$','$x=8$','$x=\\pm 8$'],correct:0,explanation:'$x^2-16=0 \\Rightarrow x=\\pm 4$.'},
+            {q:'$x^2+1=0$:',options:['אין פתרון ממשי','$x=1$','$x=-1$','$x=\\pm 1$'],correct:0,explanation:'$\\Delta=0-4=-4<0$ → אין פתרונות ממשיים.'}
+        ]
+    },
+    {
+        id: 125,
+        category: 'functions',
+        title: 'תרגילי חזרה — פונקציות',
+        desc: 'בעיות מעורבות בפונקציות',
+        theory: `
+<h3>סיכום נושאים</h3>
+<p><strong>תחום:</strong> שבר → מכנה $\\neq 0$. שורש → תוכן $\\geq 0$. לוג → ארגומנט $> 0$.</p>
+<p><strong>נקודות מיוחדות:</strong> חיתוך צירים, קודקוד, אסימפטוטות.</p>
+<p><strong>מונוטוניות:</strong> עולה / יורדת / קבועה.</p>
+<p><strong>סימטריה:</strong> זוגית ($f(-x)=f(x)$), אי-זוגית ($f(-x)=-f(x)$).</p>
+
+<div class="example-box">
+<div class="example-title">דוגמה מסכמת</div>
+<p>$f(x) = \\frac{x+1}{x-2}$</p>
+<p>תחום: $x \\neq 2$. אסימפטוטה אנכית: $x=2$. אופקית: $y=1$.</p>
+<p>חיתוך ציר $x$: $x=-1$. חיתוך ציר $y$: $f(0)=-\\frac{1}{2}$.</p>
+</div>
+        `,
+        questions: [
+            {q:'תחום $f(x)=\\frac{1}{\\sqrt{x-3}}$:',options:['$x>3$','$x \\geq 3$','$x \\neq 3$','$x>0$'],correct:0,explanation:'$x-3>0$ (חזק כי במכנה): $x>3$.'},
+            {q:'$f(x)=x^2-6x+8$ → $f(3)=$',options:['$-1$','$1$','$0$','$-3$'],correct:0,explanation:'$9-18+8=-1$.'},
+            {q:'קודקוד $y=-x^2+4x$:',options:['$(2,4)$','$(4,0)$','$(0,0)$','$(-2,4)$'],correct:0,explanation:'$x_v=\\frac{-4}{-2}=2$, $y=-(4)+8=4$. $(2,4)$.'},
+            {q:'$f(x)=\\log(x-1)$ תחום:',options:['$x>1$','$x>0$','$x \\geq 1$','$x \\neq 1$'],correct:0,explanation:'ארגומנט לוגריתם חייב להיות חיובי: $x-1>0$.'},
+            {q:'אם $f(2)=5$ ול-$f$ יש הופכית, אז $f^{-1}(5)=$',options:['$2$','$5$','$\\frac{1}{5}$','$-2$'],correct:0,explanation:'$f(2)=5 \\Leftrightarrow f^{-1}(5)=2$.'}
+        ]
+    },
+    {
+        id: 126,
+        category: 'trigonometry',
+        title: 'חזרה — טריגונומטריה',
+        desc: 'תרגול מעורב בטריגונומטריה',
+        theory: `
+<h3>סיכום נוסחאות</h3>
+<p>• $\\sin^2\\theta+\\cos^2\\theta=1$</p>
+<p>• $\\tan\\theta=\\frac{\\sin\\theta}{\\cos\\theta}$</p>
+<p>• משפט הסינוסים: $\\frac{a}{\\sin A}=\\frac{b}{\\sin B}$</p>
+<p>• משפט הקוסינוסים: $c^2=a^2+b^2-2ab\\cos C$</p>
+<p>• שטח: $S=\\frac{1}{2}ab\\sin C$</p>
+<p>• $\\sin 2\\alpha=2\\sin\\alpha\\cos\\alpha$</p>
+<p>• $\\cos 2\\alpha=\\cos^2\\alpha-\\sin^2\\alpha$</p>
+
+<div class="tip-box"><strong>טיפ לבחינה:</strong> כתבו את כל הנוסחאות על טיוטה בתחילת הבחינה, לפני שמתחילים לפתור!</div>
+        `,
+        questions: [
+            {q:'$\\sin^2 30°+\\cos^2 30°=$',options:['$1$','$\\frac{1}{2}$','$\\frac{3}{4}$','$\\frac{\\sqrt{3}}{2}$'],correct:0,explanation:'תמיד 1, לכל זווית!'},
+            {q:'$\\tan 60°=$',options:['$\\sqrt{3}$','$\\frac{1}{\\sqrt{3}}$','$1$','$2$'],correct:0,explanation:'$\\frac{\\sin 60°}{\\cos 60°}=\\frac{\\frac{\\sqrt{3}}{2}}{\\frac{1}{2}}=\\sqrt{3}$.'},
+            {q:'$a=10, B=30°, C=90°$. $b=$',options:['$5$','$5\\sqrt{3}$','$10$','$10\\sqrt{3}$'],correct:0,explanation:'$\\frac{b}{\\sin 30°}=\\frac{10}{\\sin 90°}=10 \\Rightarrow b=10 \\cdot 0.5=5$.'},
+            {q:'$\\cos 0°=$',options:['$1$','$0$','$-1$','$\\frac{1}{2}$'],correct:0,explanation:'$\\cos 0°=1$.'},
+            {q:'$\\sin 2 \\cdot 45°=\\sin 90°=$',options:['$1$','$\\frac{\\sqrt{2}}{2}$','$0$','$2$'],correct:0,explanation:'$\\sin 90°=1$.'}
+        ]
+    },
+    {
+        id: 127,
+        category: 'probability',
+        title: 'חזרה — הסתברות',
+        desc: 'תרגול מעורב בהסתברות',
+        theory: `
+<h3>סיכום</h3>
+<p>• $0 \\leq P(A) \\leq 1$</p>
+<p>• $P(\\overline{A})=1-P(A)$</p>
+<p>• $P(A \\cup B) = P(A)+P(B)-P(A \\cap B)$</p>
+<p>• בלתי תלויים: $P(A \\cap B)=P(A) \\cdot P(B)$</p>
+<p>• מותנה: $P(B|A)=\\frac{P(A \\cap B)}{P(A)}$</p>
+<p>• בינומי: $P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}$</p>
+<p>• תוחלת: $E(X)=\\sum x_i P(x_i)$</p>
+
+<div class="tip-box"><strong>שגיאה נפוצה:</strong> "או" ≠ כפל! $P(A \\text{ או } B)$ = חיבור (פחות החפיפה). "וגם" = כפל (אם בלתי תלויים).</div>
+        `,
+        questions: [
+            {q:'$P(A)=0.6, P(\\overline{A})=$',options:['$0.4$','$0.6$','$1.6$','$-0.6$'],correct:0,explanation:'$P(\\overline{A})=1-0.6=0.4$.'},
+            {q:'$P(A)=0.3, P(B)=0.4, P(A \\cap B)=0.1$. $P(A \\cup B)=$',options:['$0.6$','$0.7$','$0.8$','$0.12$'],correct:0,explanation:'$0.3+0.4-0.1=0.6$.'},
+            {q:'שני אירועים זרים: $P(A \\cap B)=$',options:['$0$','$P(A) \\cdot P(B)$','$P(A)+P(B)$','$1$'],correct:0,explanation:'זרים = לא יכולים לקרות יחד → $P(A \\cap B)=0$.'},
+            {q:'$P(B|A)=\\frac{P(A \\cap B)}{?}$',options:['$P(A)$','$P(B)$','$P(A \\cup B)$','$1$'],correct:0,explanation:'הסתברות מותנית: מחלקים ב-$P(A)$.'},
+            {q:'מטילים קובייה. $P(\\text{זוגי})=$',options:['$\\frac{1}{2}$','$\\frac{1}{3}$','$\\frac{1}{6}$','$\\frac{2}{3}$'],correct:0,explanation:'$\\{2,4,6\\}$ מתוך $\\{1,...,6\\}$: $\\frac{3}{6}=\\frac{1}{2}$.'}
+        ]
+    },
+    {
+        id: 128,
+        category: 'geometry',
+        title: 'חזרה — גיאומטריה',
+        desc: 'תרגול מעורב בגיאומטריה',
+        theory: `
+<h3>נוסחאות שטח עיקריות</h3>
+<p>• משולש: $\\frac{1}{2}bh$ או $\\frac{1}{2}ab\\sin C$ או הרון</p>
+<p>• מלבן: $ab$ ∙ ריבוע: $a^2$ ∙ מעוין: $\\frac{d_1 d_2}{2}$</p>
+<p>• טרפז: $\\frac{(a+b)h}{2}$ ∙ מקבילית: $ah$</p>
+<p>• עיגול: $\\pi r^2$ ∙ גזרה: $\\frac{\\theta}{360°}\\pi r^2$</p>
+
+<h3>נפחים</h3>
+<p>• גליל: $\\pi r^2 h$ ∙ חרוט: $\\frac{1}{3}\\pi r^2 h$ ∙ כדור: $\\frac{4}{3}\\pi r^3$</p>
+<p>• תיבה: $lwh$ ∙ פירמידה: $\\frac{1}{3}Sh$</p>
+        `,
+        questions: [
+            {q:'שטח משולש בסיס 8 גובה 5:',options:['$20$','$40$','$13$','$80$'],correct:0,explanation:'$\\frac{1}{2} \\cdot 8 \\cdot 5 = 20$.'},
+            {q:'היקף עיגול $r=7$:',options:['$14\\pi$','$49\\pi$','$7\\pi$','$28\\pi$'],correct:0,explanation:'$2\\pi r = 14\\pi$.'},
+            {q:'נפח תיבה $3 \\times 4 \\times 5$:',options:['$60$','$12$','$47$','$94$'],correct:0,explanation:'$3 \\cdot 4 \\cdot 5 = 60$.'},
+            {q:'שטח גזרה $90°$ ברדיוס 4:',options:['$4\\pi$','$16\\pi$','$8\\pi$','$2\\pi$'],correct:0,explanation:'$\\frac{90}{360} \\cdot \\pi \\cdot 16 = 4\\pi$.'},
+            {q:'שטח פנים כולל של קובייה $a=3$:',options:['$54$','$27$','$36$','$18$'],correct:0,explanation:'$6a^2 = 6 \\cdot 9 = 54$.'}
+        ]
+    },
+    {
+        id: 129,
+        category: 'algebra',
+        title: 'חזרה — אלגברה',
+        desc: 'תרגול מעורב באלגברה',
+        theory: `
+<h3>נושאים מרכזיים</h3>
+<p>• חוקי חזקות: $a^m \\cdot a^n = a^{m+n}$, $(a^m)^n = a^{mn}$</p>
+<p>• פירוק: $(a+b)(a-b) = a^2-b^2$</p>
+<p>• נוסחת שורשים: $x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}$</p>
+<p>• ויאטה: $x_1+x_2=-\\frac{b}{a}$, $x_1 x_2=\\frac{c}{a}$</p>
+<p>• לוגריתמים: $\\log(ab)=\\log a+\\log b$</p>
+
+<div class="tip-box"><strong>טיפ לבחינה:</strong> תמיד בדקו תשובה ע"י הצבה חזרה במשוואה!</div>
+        `,
+        questions: [
+            {q:'$2^3 \\cdot 2^4 =$',options:['$128$','$24$','$2^7$','$2^{12}$'],correct:0,explanation:'$2^{3+4}=2^7=128$.'},
+            {q:'$(x+3)(x-3) =$',options:['$x^2-9$','$x^2+9$','$x^2-6x+9$','$x^2+6x-9$'],correct:0,explanation:'כפל מקוצר: $a^2-b^2$.'},
+            {q:'$\\log_5 25 =$',options:['$2$','$5$','$25$','$\\frac{1}{2}$'],correct:0,explanation:'$5^2=25 \\Rightarrow \\log_5 25=2$.'},
+            {q:'$(-3)^2 =$',options:['$9$','$-9$','$6$','$-6$'],correct:0,explanation:'$(-3)^2=(-3)(-3)=9$.'},
+            {q:'$\\frac{x^6}{x^2} =$',options:['$x^4$','$x^3$','$x^8$','$x^{12}$'],correct:0,explanation:'$x^{6-2}=x^4$.'}
+        ]
+    },
+    {
+        id: 130,
+        category: 'sequences',
+        title: 'חזרה — סדרות',
+        desc: 'תרגול מעורב בסדרות',
+        theory: `
+<h3>סיכום כל הנוסחאות</h3>
+<p><strong>חשבונית:</strong></p>
+<p>• $a_n = a_1+(n-1)d$</p>
+<p>• $S_n = \\frac{n(a_1+a_n)}{2}$</p>
+<p><strong>הנדסית:</strong></p>
+<p>• $a_n = a_1 \\cdot q^{n-1}$</p>
+<p>• $S_n = a_1 \\cdot \\frac{q^n-1}{q-1}$</p>
+<p>• $S_\\infty = \\frac{a_1}{1-q}$ (אם $|q|<1$)</p>
+<p><strong>גבול:</strong> $\\lim \\frac{an+b}{cn+d}=\\frac{a}{c}$</p>
+
+<div class="tip-box"><strong>צ'ק-ליסט:</strong> 1) זהו סוג. 2) מצאו $a_1, d/q$. 3) כתבו נוסחה. 4) חשבו. 5) בדקו!</div>
+        `,
+        questions: [
+            {q:'$a_1=3, d=5$. $a_{20}=$',options:['$98$','$103$','$100$','$95$'],correct:0,explanation:'$3+19 \\cdot 5 = 98$.'},
+            {q:'$a_1=4, q=\\frac{1}{2}$. $S_\\infty=$',options:['$8$','$4$','$2$','$\\infty$'],correct:0,explanation:'$\\frac{4}{1-0.5}=8$.'},
+            {q:'$5, 10, 20, 40,...$ → $a_6=$',options:['$160$','$80$','$320$','$120$'],correct:0,explanation:'$q=2$, $a_6=5 \\cdot 2^5=160$.'},
+            {q:'$S_5$ של $1,3,5,7,9$:',options:['$25$','$20$','$15$','$30$'],correct:0,explanation:'$\\frac{5(1+9)}{2}=25$. (או: $5^2=25$ לסדרת אי-זוגיים!)'},
+            {q:'$\\lim_{n \\to \\infty} \\frac{2n+3}{4n-1}=$',options:['$\\frac{1}{2}$','$2$','$\\frac{3}{4}$','$0$'],correct:0,explanation:'$\\frac{2}{4}=\\frac{1}{2}$ (יחס מקדמים מובילים).'}
+        ]
     }
 ];
